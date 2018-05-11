@@ -1,0 +1,2900 @@
+@import "reset";
+@import "util";
+
+*{
+	@include box-sizing(border-box);
+}
+
+html{
+	*,*:after,*:before{
+		// @include adjust-font-size-to ($base-font-size);
+		// font-size: 12px;
+	}
+	font-family:"微軟正黑體","Century Gothic","Microsoft JhengHei",sans-serif,"Apple LiGothic Medium","PMingLiU";
+
+}
+
+html,body{
+	width:100%;
+	height:100%;
+	position: relative;
+}
+
+#Wapper{
+	width: 100%;
+	// height: 100%;
+	min-height: 100%;
+	position: relative;
+}
+
+// 天
+header{
+	position: relative;
+	// @include background-image(linear-gradient(360deg, #A7017A 43%,$content_font_color 43%));
+	.container{
+		position: relative;
+		width: $content_width;
+		height: 140px;
+		padding:0;
+		margin: 0 auto;
+		// 會員專區
+		.member_area{
+			overflow: hidden;
+			background-color: $content_font_color;
+			.simplelogo{
+				display: inline-block;
+				width: 200px;
+				height: 80px;
+				float: left;
+				h1{
+					display: flex;
+				    align-items: center;
+				    justify-content: center;
+				    height: 80px;
+					a{
+						display: inline-block;
+						@extend %indent;
+						@include image-block("simplelogo.png");	
+					}
+				}
+			}			
+			.simplego_logo{
+				@extend %center-center;
+				width: 770px;
+				height: 80px;
+				float: left;
+				h1{
+					text-align: center;
+					a{
+						display: inline-block;
+						@extend %indent;
+						@include image-block("logo.png");
+					}
+				}
+			}
+			.member{
+				width: 240px;
+				height: 80px;
+				float: left;
+				overflow: hidden;
+				display: flex;
+			    justify-content: center;
+			    align-items: center;
+				ul{
+					width: 360px;
+					overflow: hidden;
+					li{
+						width: 110px;
+						padding: rhythm(0.5);
+						margin: rhythm(0.5);
+						text-align: center;
+						border:1px solid $content_All_color;
+						float: left;
+						a{
+							display: block;
+							color: $content_All_color;
+						}
+						&:hover{
+							background-color:$content_All_color;						
+							a{
+								color: $content_font_color;
+							}
+						}
+					}
+				}
+			}
+			.change{
+				display: block;
+				position: absolute;
+				top: 56px;
+				right: 10px;
+				z-index: 2;
+				background-color:$content_font_color;
+				ul{
+					overflow: hidden;
+					li{
+						width: 110px;
+						padding: rhythm(0.5);
+						margin: rhythm(0.5);
+						text-align: center;
+						border:1px solid $content_All_color;
+						a{
+							color: $content_All_color;
+
+						}
+						&:hover{
+							background-color:$content_All_color;						
+							a{
+								color: $content_font_color;
+							}
+						}
+					}
+				}
+			}
+		}
+		// 選單區塊
+		.nav_area{
+			height: 60px;
+			background-color: $content_All_color;
+			nav{
+				display: inline-block;
+				width: 1050px;
+				float: left;
+				ul{
+					overflow: hidden;
+					li{
+						width: $nav_li_width;
+						float: left;
+						margin-left:rhythm(0.5);
+						margin-right:rhythm(0.5);
+						a{
+							display: flex;
+			    			justify-content: center;
+			    			align-items: center;
+							height: 45px;
+							color: $content_font_color;
+							background-color: $content_black_color;
+							border-radius: 0 0 10px 10px;
+							&:hover{
+								@include transition(all 0.5s);
+								height: 50px;
+							}
+							&.font_bg_color{
+								color:$content_black_color;
+								background-color: #F5F5F5;	
+							}
+						}
+					}
+				}
+			}
+			.goshop_area{
+				position: relative;
+				h2{
+					display: inline-block;
+					width: 110px;
+					height: 60px;
+					float: left;
+					margin-left: rhythm(4.5);
+					text-align: center;
+					a{
+						display: inline-flex;
+		    			justify-content: center;
+		    			align-items: center;
+						height: 45px;
+						font-weight: bolder;
+						color: $content_font_color;
+						span{
+							margin: rhythm(0.3);
+						}
+						// &:before{
+						// 	content: "";
+						// 	margin-right: rhythm(0.5);
+						// 	background-image: image-url("icon_shopping.png");
+						// 	width: image-width("icon_shopping.png");
+						// 	height: image-height("icon_shopping.png");
+						// }
+					}
+				}
+				// 購物車清單
+				.shoppinglist{
+					display: none;			
+					position: absolute;
+					top: 60px;
+					right: 0;
+					width: 315px;
+					background-color: $content_font_color;	
+					box-shadow: 0px 4px 12px rgba($content_black,0.3);
+					z-index: 2;
+					.list{
+						&.Beyond{
+							height: 440px;
+							overflow-y:scroll;				
+						}
+						ul{
+							li{
+								position: relative;
+								border-bottom: 1px solid #DFDFDF;
+								overflow: hidden;
+								@include box-sizing(border-box);
+								color: #666666;
+								.pic{
+									width: 95px;
+									float: left;
+									a{
+										display: block;
+										img{
+											width: 100%;
+											height: auto;
+										}
+									}
+									
+								}
+								.details{
+									width: 200px;
+									float: left;
+									padding: rhythm(1);
+									font-family: "Century Gothic";
+									a{
+										p{
+											@include adjust-font-size-to(nth($font-list, 2));
+											text-align: justify;
+											letter-spacing: -0.03em;
+											&.title{
+												color: $content_black_color;
+											}
+											span{
+												white-space: normal;
+												color: #666666;
+												margin-left: rhythm(0.5);
+											}								
+										}								
+									}
+									.mony{
+										@include adjust-font-size-to(nth($font-list, 2) );
+										color: $content_All_color;
+										span{
+											@include adjust-font-size-to(nth($font-list, 5) );
+											font-weight: bolder;
+										}
+									}
+								}
+				
+								.del{
+									position: absolute;
+									bottom: 9px;
+									right: 14px;
+								}
+							}
+						}				
+					}
+					button{
+						margin: rhythm(1);
+						padding: rhythm(0.8);
+						width:295px;
+						border: none;
+						color: $content_font_color;
+						background-color: $content_All_color;
+						cursor: pointer;
+						outline: none;
+						&:hover{
+							background-color: $content_black_color;
+						}
+					}
+				}				
+			}			
+		}
+	}
+	&:before{
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 60px;
+		background-color: $content_All_color;
+	}
+}
+
+// 各館主打星區塊
+main{
+	display: block;
+	width: 100%;
+	padding-top: rhythm(1);
+	padding-bottom: rhythm(12);
+	position: relative;
+	// 主打星商品樣式
+	.starblock{
+		@extend %Basic-setting;
+		ul{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content:space-between;
+			li{
+				width: 400px;
+				margin-bottom: rhythm(1);
+				// margin-left: 1%;
+				.title_bg{
+					display: flex;
+    				align-items: center;
+					width: 100%;
+					height:60px;
+					color: $content_font_color;
+					background-color: $content_black; 
+					h1{
+						display: flex;
+    					align-items: center;
+    					padding-top: rhythm(0.5);
+    					padding-right: rhythm(1);
+    					padding-bottom: rhythm(0.5);
+    					padding-left: rhythm(1);
+    					width: 65%;
+						height: 40px;
+						font-weight: bolder;
+						border-radius: 0 15px 15px 0;
+						@include adjust-font-size-to(nth($font-list, 5) );
+						background: linear-gradient(135deg, #c9caca 0%,#c9caca 45%,#a7017a 44%,#a7017a 100%);
+						span{
+							margin-right: rhythm(4);
+							@include adjust-font-size-to(nth($font-list, 5) );
+							color: $content_black;
+						}
+					}
+				}
+				a{
+					display: block;
+					.picimg{
+						// display: block;
+						display: flex;
+    					align-items: center;						
+						border:1px solid #DAD9D9;
+						width: 400px;
+						height: 400px;
+						overflow: hidden;
+						img{
+							width: 100%;
+							height: auto;
+							&:hover{
+								@include transition(all 1s);
+								@include transform(scale(0.9));
+							}							
+						}
+					}
+					.txtarea{
+						padding: rhythm(1);
+						color: $content_black;
+						font-family: "Century Gothic";
+						p{
+							@include adjust-font-size-to(nth($font-list, 2) );
+							height: 40px;
+							overflow: hidden;
+						}
+						dd{
+							display: inline-block;
+							text-decoration: line-through;
+							color:rgba($content_black,0.4);
+							@include adjust-font-size-to(nth($font-list, 1) );
+						}
+						dt{
+							display: inline-block;
+							margin-left: rhythm(1.5);
+							color: $content_All_color;
+							span{
+								font-weight: bolder;
+								@include adjust-font-size-to(nth($font-list, 6) );
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.banner_bar{
+		display: block;
+		width: 100%;
+		margin-top: rhythm(1);
+		margin-bottom: rhythm(1);
+		a{
+			display: block;
+			width: 1220px;
+			margin: 0 auto;
+		}
+	}
+	// 主打星貨架商品樣式
+	.shelfblock{
+		@extend %Basic-setting;
+		ul{
+			display: flex;
+			flex-wrap: wrap;
+			// justify-content:space-between;
+			li{
+				width: 290px;
+				margin-bottom: rhythm(1);
+				margin-left: 1%;
+				a{
+					display: block;
+					.picimg{
+						// display: block;
+						display: flex;
+    					align-items: center;
+						width: 290px;
+						height: 290px;
+						overflow: hidden;
+						border:1px solid #DAD9D9;
+						img{
+							width: 100%;
+							height: auto;
+							&:hover{
+								@include transition(all 1s);
+								@include transform(scale(0.9));
+							}							
+						}
+					}
+					.txtarea{
+						padding: rhythm(1);
+						color: $content_black;
+						font-family: "Century Gothic";
+						p{
+							height: 40px;
+							overflow: hidden;
+							@include adjust-font-size-to(nth($font-list, 2) );
+						}
+						dd{
+							display: inline-block;
+							text-decoration: line-through;
+							color:rgba($content_black,0.4);
+							@include adjust-font-size-to(nth($font-list, 1) );
+						}
+						dt{
+							display: inline-block;
+							margin-left: rhythm(1.5);
+							color: $content_All_color;
+							span{
+								font-weight: bolder;
+								@include adjust-font-size-to(nth($font-list, 6) );
+							}
+						}
+					}
+				}
+			}
+		}
+
+		nav{
+			display: flex;
+		    align-items: center;
+		    justify-content: center;
+			margin: 10px auto;
+			text-align: center;
+			.prev,.next{
+				display: inline-block;
+				@extend %indent;
+				width: 30px;
+				height: 30px;
+				cursor: pointer;
+			}
+			.prev{
+				width: 0;
+				height: 0;
+				margin-right: rhythm(0.5);
+				border-style: solid;
+				border-width: 10px 20px 10px 0;
+				border-color: transparent #848484 transparent transparent;
+			}
+			.next{
+				width: 0;
+				height: 0;
+				margin-left: rhythm(0.5);
+				border-style: solid;
+				border-width: 10px 0 10px 20px;
+				border-color: transparent transparent transparent #848484;
+			}
+			ul{
+				display: inline-block;
+				overflow: hidden;
+				li{
+					width: 30px;
+					margin: 0 auto;
+					float: left;
+					a{
+						display: block;
+						height: 30px;
+						line-height: 30px;
+						text-align: center;
+						color:#848484;
+						font-family: "Century Gothic";
+						&:hover,&.act{
+							text-decoration: underline;
+							color: $content_All_color;
+						}
+					}
+				}
+			}
+		}
+	}
+	// 商品資訊樣式
+	.productList{
+		@extend %Basic-setting;
+		padding:rhythm(2);
+		position: relative;
+		.product_picture{
+			display: inline-block;
+			width: 500px;
+			height: 500px;
+			float: left;
+			overflow: hidden;
+			border:1px solid #c5c5c5;
+			img{
+				width: 100%;
+				height: auto;
+			}
+		}
+		.product_txtlist{
+			display: inline-block;
+			width: 680px;
+			float: left;
+			padding:0 20px;
+			.contentbox{
+				color: $textColor;
+				font-weight: bolder;
+				letter-spacing: -0.5px;
+				overflow: hidden;
+				h1{
+					@include adjust-font-size-to(nth($font-list, 4) );
+					color: rgba(#000,0.6);
+				}
+				h2{
+					// height: 68px;
+					font-size: 26px;
+					line-height: 34px;
+					// overflow: hidden;
+				}
+				dd{
+					@include adjust-font-size-to(nth($font-list, 1) );
+					text-align: right;
+					font-weight: inherit;					
+				}
+				.textcontent{
+					border-top: $borderl;
+					border-bottom: $borderl;
+					padding: rhythm(1) 0;
+					p{
+						@include adjust-font-size-to(nth($font-list, 2),2.5);
+					}
+				}
+				.activitytxt{
+					p{
+						@include adjust-font-size-to(nth($font-list, 2),2.5);
+						color: #ff406e;
+					}
+				}				
+
+			}
+		}
+		.dropdown_list{
+			padding: rhythm(1);
+			overflow: hidden;
+			.blockleft{
+				h3{
+					@include adjust-font-size-to(nth($font-list, 3) );
+					span{
+						display: inline-block;
+						@include adjust-font-size-to(nth($font-list, 3) );
+						border-radius: 15px;
+						padding:5px 10px;
+						margin-right: 8px;
+					}
+					a{
+						display: inline-block;
+						@include adjust-font-size-to(nth($font-list, 3) );
+						margin-left: 8px;
+						color: #ff5400;
+					}
+				}
+				.fromtab{
+					padding: rhythm(1)0;
+					overflow: hidden;
+					.count{
+						margin: rhythm(1) 0;
+						@include span(8);
+						label{
+							@include adjust-font-size-to(nth($font-list, 2) );
+						}
+						.select{
+							display: inline-block;
+							width: 65%;
+							margin-left: 5px;						
+							select{
+								width: 100%;
+								font-size: 14px;
+								height:28px;
+								line-height: 28px;
+								border-radius: 5px;
+							}
+						}
+						h6{
+							display: inline-block;
+							@include adjust-font-size-to(nth($font-list, 1) );
+							span{
+								margin: 0 5px;
+							}
+						}
+					}
+				}
+			}
+			.blockright{
+				padding: rhythm(1)0;
+				.monylist{
+					display: inline-block;
+					width: 70%;
+					float: left;
+					div{
+						text-align: right;
+						padding:0 20px;					
+					}
+					h4{
+						display: inline-block;
+						@include adjust-font-size-to(nth($font-list, 1) );
+						color: #898888;
+						del{
+							@include adjust-font-size-to(nth($font-list, 1) );
+							font-family: "Century Gothic";
+						}
+					}
+					h5{
+						display: inline-block;
+						@include adjust-font-size-to(nth($font-list, 3) );
+						font-family: "Century Gothic";
+						color: #ef2d66;
+						margin-left: 5px;
+						span{
+							@include adjust-font-size-to(nth($font-list, 7) );
+							letter-spacing: -1px;
+							font-family: "Century Gothic";
+							font-weight: bold;
+						}
+					}
+				}
+				.monybotton{
+					display: inline-block;
+					width: 30%;					
+					ul{
+						overflow: hidden;
+						li{
+							@include span(24);
+							float: left;
+							border-radius: 8px;
+							a{
+								display:block;
+								text-align: center;
+								text-decoration: none;
+								color: $content_font_color;
+								@include adjust-font-size-to(nth($font-list, 4),4.5 );
+							}
+							&:nth-child(1){
+								background-color: $content_All_color;
+							}
+							&:nth-child(2){
+								background-color: #7cc33f;
+							}
+							&:hover{
+								&:nth-child(1){
+									background-color: #810C61;
+								}
+								&:nth-child(2){
+									background-color: #63b71b;
+								}	 
+							}
+
+						}
+					}
+				}
+			}
+		}
+		.product_specifications{
+			clear: both;
+			padding-top:20px;
+			.conbox1{
+				h1{
+					border-bottom: 1px solid $textColor;
+					margin-bottom: 10px;
+					span{
+						display: inline-block;
+						background-color: $textColor;
+						padding: rhythm(0.5);
+						@include adjust-font-size-to(nth($font-list, 2) );
+						color: $content_font_color;
+					}
+				}
+				.contxt{
+					p{
+						@include adjust-font-size-to(nth($font-list, 2),3 );
+					}
+					ol{
+						list-style: decimal;
+						padding-left: 20px;
+						li{
+							@include adjust-font-size-to(nth($font-list, 2),2.5 );;
+						}
+					}
+				}
+				.activitytxt{
+					p{
+						color: #ef2d66;
+					}
+				}
+				.contimg{
+					display: block;
+					padding:0;
+					margin: 0 auto;
+					img{
+						margin: 0 auto;
+					}
+				}
+			}
+		}
+		.Success_added{
+			position: absolute;
+			top: 240px;
+			right:440px;
+			z-index: 1;
+			display: none;
+		}			
+	}
+	// 會員登入樣式
+	.member_Login{
+		@extend %Basic-setting;
+		width: 800px;
+		overflow: inherit;
+		padding-top: rhythm(4);
+		h1{
+			@include adjust-font-size-to(nth($font-list, 4) );
+			color: $content_All_color;
+			font-weight: bolder;
+			padding-left: rhythm(2);
+			text-align: center;
+		}
+		aside{
+			padding: rhythm(2);
+			box-shadow: 0px 5px 5px rgba($content_black,0.4);
+			overflow: hidden;
+			.userleft{
+				@include span(24 nest);
+				padding-left: rhythm(2);
+				padding-right: rhythm(2);
+			}
+			h2{
+				margin-top: rhythm(1);
+				font-weight: bolder;
+				@include adjust-font-size-to(nth($font-list, 4) );
+			}
+			p{
+				text-align: center;
+				@include adjust-font-size-to(nth($font-list, 3),3.2 );
+			}
+			h3{
+				display: block;
+				text-align: right;
+				margin-bottom: rhythm(1);
+				a{
+					display: inline-block;
+					color: $content_All_color;
+					font-weight: bolder;
+					span{
+						display: inline-block;
+						padding: rhythm(0.5);
+						padding-top: 0;
+						padding-bottom: 0;
+						color: $content_font_color;
+						background-color: $content_All_color;
+					}
+					&:hover{
+						color: $content_black_color;
+						span{
+							background-color: $content_black_color;
+						}
+					}
+				}
+			}
+			input{
+				width: 100%;
+				height: 44px;
+				padding-left: 1%;
+				outline: none;
+				box-shadow: inset 1px 1px 2px rgba($content_black,0.3);
+				margin-top: rhythm(1);
+				margin-bottom: rhythm(1);
+				&:focus{
+					border:1px solid $content_All_color;
+				}
+			}
+			button{
+				width: 100%;
+				height: 44px;
+				text-align: center;
+				border:none;
+				color: $content_font_color;
+				cursor: pointer;
+				outline: none;
+				background-color: $content_All_color;
+				margin-top: rhythm(2);
+				&:hover{
+					background-color: $content_black_color;
+				}
+			}
+			ul{
+				padding-top: rhythm(1);
+				padding-bottom: rhythm(1);
+				overflow: hidden;
+				li{
+					@include adjust-font-size-to(nth($font-list, 2),2.5 );
+					@include span(8);
+					text-align: center;
+					color: $textColor;
+					border:1px solid $textColor;
+					margin-bottom: rhythm(1);
+					cursor: pointer;
+					&.number_act{
+						color: $content_font_color;
+						background-color: $content_All_color;
+						border:1px solid $content_All_color;
+					}
+				}
+			}
+			.password{
+				margin-bottom: 50px;
+			}
+		}		
+	}
+	// 表單樣式
+	.forget_password,.return_application,.return_page,.shoppingdetails,.myorder,.buyhelp,.return_process,.service,.privacy,.setpassowrd{
+		@extend %Basic-setting;
+		overflow: inherit;
+		margin-top: rhythm(5);
+		width: 800px;
+		h1{
+			text-align: center;
+			font-weight: bolder;
+			color: $content_black_color;
+			@include adjust-font-size-to(nth($font-list, 5) );
+		}
+	}
+
+	// 表單陰影樣式
+	.forgetbox,.returnbox,.return_pagebox,.shopbox,.shopbox1,.shopbox2,.Complete_order,.myorderlist{
+		padding: rhythm(3);
+		box-shadow: 0px 5px 5px rgba($content_black,0.4);
+		overflow: hidden;		
+	}
+
+	// 忘記密碼表單樣式
+	.forgetbox{
+		.box{
+			margin-bottom: rhythm(4);
+			h2{
+				font-weight: bolder;
+				@include adjust-font-size-to(nth($font-list, 3) );
+				span{
+					@include adjust-font-size-to(nth($font-list, 2) );
+					margin-left: rhythm(1);
+					color:#A0A0A0;
+					&.message{
+						color: #FD0000;
+					}
+					dd{
+						display: inline-block;
+						margin-left: rhythm(0.2);
+						margin-right: rhythm(0.2);
+						font-family: "Century Gothic";
+					}
+					.sendbut{
+						display: inline-block;
+						width: inherit;
+						height: inherit;
+						box-shadow: none;
+						margin: 0 auto;
+						@include adjust-font-size-to(nth($font-list, 2) );
+						margin-left: rhythm(0.5);
+						color:#A0A0A0;
+						border:none;
+						outline:none;
+						background-color:transparent;
+						cursor: pointer;
+					}
+				}
+			}
+			input{
+				width: 100%;
+				height: 44px;
+				padding-left: 1%;
+				outline: none;
+				box-shadow: inset 1px 1px 2px rgba($content_black,0.3);
+				margin-top: rhythm(1);
+				margin-bottom: rhythm(0.5);
+				&:focus{
+					border:1px solid $content_All_color;
+					box-shadow: none;
+				}
+			}
+			h3{
+				font-weight: bolder;
+				@include adjust-font-size-to(nth($font-list, 2) );
+				color: $content_All_color;
+				overflow: hidden;
+				.sendbut{
+					display:inline-block;
+					width: inherit;
+					height: inherit;
+					box-shadow: none;
+					margin:0 auto;
+					padding-top: rhythm(0.5);
+					padding-right: rhythm(1);
+					padding-bottom: rhythm(0.5);
+					padding-left: rhythm(1);					
+					float: right;
+					color: $content_font_color;
+					background-color: $content_All_color;
+					@include adjust-font-size-to(nth($font-list, 2) );
+					border:none;
+					outline:none;
+					cursor: pointer;
+					&:hover{
+						background-color: $content_black_color;
+					}
+					&:focus{
+						border:none;
+					}
+				}
+			}				
+		}		
+	}
+
+	// 退貨申請表單樣式
+	.return_application{
+		width: 1200px;
+		.returnbox{
+			aside{
+				h1{
+					display: inline-block;
+					font-weight: bolder;
+					float: left;
+					margin-top: rhythm(0.5);
+				}
+				.count{
+					overflow: hidden;
+					margin-bottom: rhythm(2);
+					.left{
+						@include span(10 nest);
+					}
+					.right{
+						display: block;
+						@include span(14 nest);
+					}
+					input{
+						display: inline-block;
+						width: 70%;
+						height: 44px;
+						margin-top: 0;
+						margin-bottom: 0;
+						margin-left: rhythm(1);
+						margin-right: rhythm(1);
+						padding:0;
+						text-overflow : ellipsis;
+						white-space : nowrap;
+						overflow: hidden;
+						box-shadow: inset 1px 1px 2px rgba($content_black,0.3);					
+					}
+					.returninput{
+						display:inline-block;
+						p{
+							position: relative;	
+							width: 280px;
+							height: 41px;
+							cursor: pointer;
+							margin-left: rhythm(1);
+							margin-right: rhythm(1);
+							box-shadow: inset 1px 1px 2px rgba($content_black,0.5);
+							cursor: pointer;
+							text-overflow: ellipsis;
+						    white-space: nowrap;
+						    overflow: hidden;
+						    float: left;
+						    @include adjust-font-size-to(nth($font-list, 2) );
+							&:before{
+								content: "";
+								position: absolute;
+								display: block;
+								top: 14px;
+								right: 10px;
+								width: 0;
+								height: 0;
+								border-style: solid;
+								border-width: 15px 10px 0 10px;
+								border-color: $content_black_color transparent transparent transparent;
+							}	
+						}
+						textarea{
+							display:none;
+							width: 250px;
+							height: 41px;
+							padding: 0;
+							margin: 0 auto;
+							resize: none;
+							float: left;
+							@include adjust-font-size-to(nth($font-list, 2) );
+						}
+					}
+					.returnitem{
+						display: none;
+						width: 460px;
+						margin-top: rhythm(1);
+						margin-left: 94px;
+						padding: rhythm(1);
+						box-shadow: inset 1px 2px 2px rgba(0, 0, 0, 0.5);
+						.issue{
+							p{
+								@include adjust-font-size-to(nth($font-list, 3),2.8 );
+								color: $content_All_color;
+								font-weight: bolder;
+								// border-bottom:1px solid $content_All_color;
+								margin-top: rhythm(0.5);
+							}
+							ul{
+								list-style: decimal;
+								padding-left: rhythm(1.5);
+								li{
+									color:$returnColor;
+									cursor: pointer;
+									@include adjust-font-size-to(nth($font-list, 2),2.5);
+									&:hover{
+										color: $content_black;
+									}
+									&.add{
+										color: $content_black;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.button{
+			display: block;
+			margin: 0 auto;
+			padding:rhythm(2);
+			margin-top: rhythm(2);
+			text-align: center;
+			button{
+				width: 350px;
+				height: 44px;
+				border:none;
+				outline: none;
+				padding-left: rhythm(1);
+				padding-right: rhythm(1);
+				margin-left: rhythm(1);
+				margin-right: rhythm(1);
+				color: $content_font_color;
+				background-color: $content_All_color;
+				cursor: pointer;
+				&:nth-child(1){
+					background-color: $content_gray_color;
+				}				
+				&:hover{
+					background-color: $content_black_color;
+				}
+				
+			}
+		}
+	}
+
+	// 退貨申請完成表單樣式
+	.return_pagebox{
+		.Return_code{
+			text-align: center;
+			margin-bottom: rhythm(3);
+			h4{
+				padding-top: rhythm(3);
+				padding-bottom: rhythm(3);
+				text-align: center;
+				color: $content_All_color;
+				font-weight: bolder;
+				@include adjust-font-size-to(nth($font-list, 3) );
+			}
+			h5{
+				color: $content_All_color;
+				@include adjust-font-size-to(nth($font-list, 7) );
+				font-family:"Century Gothic";
+				letter-spacing: 0.1em;
+			}
+			h6{
+				font-weight: bolder;
+			}	
+			p{
+				color:$returnColor;
+				@include adjust-font-size-to(nth($font-list, 3),4 );
+				span{
+					color: $content_black;
+					font-weight: bolder;
+				}
+			}					
+		}
+		ol{
+			list-style: decimal;
+			padding-left: rhythm(2);
+			li{
+				color:$returnColor;
+				@include adjust-font-size-to(nth($font-list, 3),3.2);
+				span{
+					color: $content_black;
+					font-weight: bolder;
+				}					
+			}
+		}					
+	}
+
+	// 共用退貨/款資、付款方式訊文字樣式
+	.Return_information,.payment_information{
+		@extend %Basic-setting;
+		width: 800px;
+		overflow: hidden;
+		margin-top: rhythm(5);
+		margin-bottom: rhythm(2);
+		h2{
+			text-align: center;
+			font-weight: bolder;
+			color: $content_black_color;
+			padding-bottom: rhythm(2);
+			@include adjust-font-size-to(nth($font-list, 4) );
+		}
+		ul{
+			li{
+				@include span(6);
+				@include adjust-font-size-to(nth($font-list, 3));
+				font-weight: bold;
+				position: relative;
+				&:before{
+					content: "";
+					position: absolute;
+					top: -18px;
+					left: 0;
+					width: 1px;
+					height: 35px;
+					background-color: $content_All_color;
+					@include transform(rotate(60deg));
+				}
+				&:after{
+					content: "";
+					position: absolute;
+					right: 10px;
+					top: 15px;
+					display: block;
+					background-image: image-url("arrow.png");
+					width: image-width("arrow.png");
+					height: image-height("arrow.png");
+				}
+				&:last-child{
+					&:after{
+						display: none;
+					}
+				}
+			}
+		}			
+	}
+	// 調整付款方式寬度
+	.payment_information{
+		width: 900px;
+		ul{
+			li{
+				@include span(8);
+			}
+		}
+	}
+	// 共用注意事項文字樣式
+	.text{
+		ul{
+			list-style: decimal;
+			padding-left: rhythm(2);
+			li{
+				color: $returnColor;
+				@include adjust-font-size-to(nth($font-list, 3),3.2 );
+				span{
+					color: $content_black;
+					font-weight: bolder;
+				}
+			}
+		}				
+	}
+
+	// 購物車明細表
+	.shoppingdetails{
+		width: 1200px;	
+		&.step2{
+			width: 800px;
+		}
+		.Step_flow{
+			width: 500px;
+			margin:0 auto;
+			overflow: hidden;
+			ul{
+				overflow: hidden;
+				position: relative;
+				li{
+					@include span(8);
+					text-align: center;
+					font-weight: bolder;
+					span{
+						display: flex;
+					    align-items: center;
+					    justify-content: center;
+						width: 25px;
+						height: 25px;
+						margin: 0 auto;
+						margin-bottom: rhythm(1.5);
+						color: $content_font_color;
+						background-color: $content_gray_color;
+						border-radius: 50%;
+					}
+					&.step{
+						color: $content_All_color;
+						span{
+							background-color: $content_All_color;
+						}
+					}
+				}
+				&:before{
+					content: "";
+					position: absolute;
+					top: 12px;
+					left: 90px;
+					display: block;
+					width: 320px;
+					height: 1px;
+					background-color: $content_gray_color;
+					z-index: -1;
+				}
+			}
+		}
+		h1{
+			margin-top: rhythm(5);
+			text-align: center;
+			font-weight: bolder;
+			color: $content_black_color;
+			@include adjust-font-size-to(nth($font-list, 5) );
+		}
+		.shopbox{
+			table{
+				@include span(24 nest);
+				margin-bottom: rhythm(2);
+				overflow: hidden;
+				tr{
+					display: flex;
+				    align-items: center;
+				    justify-content: center;
+					th,td{
+						padding: rhythm(0.5);
+						text-align: center;
+						@include span(2 nest);
+						border-top:1px solid $content_black_color;
+						border-bottom:1px solid $content_black_color;
+						border-left:1px solid $content_black_color;
+						font-weight: bolder;
+						&:nth-child(1){
+							@include span(5 nest);
+						}
+						&:nth-child(2){
+							@include span(7 nest);
+						}										
+					}
+					th{
+						&:last-child{
+							border-right:1px solid $content_black_color;
+						}
+					}
+					td{
+						padding: rhythm(0.5);
+						border-style: none;
+						&:last-child{
+							a{
+								display: inline-block;
+							}
+						}						
+						.tdbox1{
+							display: flex;
+						    align-items: center;
+						    justify-content: center;
+							span{
+								@include span(16 nest);
+								img{
+									width: 100%;
+									height: auto;
+								}
+								&:nth-child(1){
+									@include span(8 nest);
+								}
+							}
+						}
+						.tdbox6{
+							@extend %center-center;
+							input{
+								border:none;
+								outline: none;
+								height: 30px;
+								text-align: center;
+								box-shadow: inset 1px 1px 2px rgba($content_black,0.3);
+							}
+							input[type="button"]{
+								width: 20px;
+								cursor: pointer;
+								&:hover{
+									background-color:#f1f1f1;
+								}
+							}
+							input[type="number"]{
+								width: 40px;
+								-webkit-appearance: textfield;
+							    -moz-appearance: textfield;
+							    appearance: textfield;
+							}
+							input[type=number]::-webkit-inner-spin-button, 
+							input[type=number]::-webkit-outer-spin-button { 
+							  -webkit-appearance: none; 
+							  margin: 0; 
+							}
+						}
+					}
+				}
+			}
+			.manytotal{
+				clear: both;
+				overflow: hidden;
+				h6{
+					display: block;
+					@include adjust-font-size-to(nth($font-list, 3),2.5 );
+					padding-top: rhythm(2);
+					border-top:1px solid $content_black;					
+					span{
+						float: right;
+					}
+				}
+			}
+		}
+		.shopbox1{
+			padding-bottom: 0;
+			position: relative;
+			&:before{
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				display: block;
+				width: 100%;
+				height: 50px;
+				background-color:#D1D2D4;
+				z-index: -1;
+			}
+			.freight{
+				padding-bottom: rhythm(2);
+				border-bottom: 1px solid $content_black;
+				.radio {
+				    display: none;
+				}
+				.radioInput {
+				    background-color: $content_font_color;
+				    border: 1px solid rgba(0, 0, 0, 0.15);
+				    border-radius: 100%;
+				    display: inline-block;
+				    width: 20px;
+				    height: 20px;
+				    margin-right: 10px;
+				    margin-top: -1px;
+				    vertical-align: middle;
+				    line-height: 1;
+				}
+				.radio:checked+.radioInput:after {
+				    background-color:$content_All_color;
+				    border-radius: 100%;
+				    content: "";
+				    display: inline-block;
+				    width: 12px;
+				    height: 12px;
+				    margin: 4px;
+				}
+				.radioInput,.radio:checked {
+				    border-radius: 100%;
+				}
+				dt{
+					display: inline-block;
+					float: right;
+				}
+			}
+			.total_amount{
+				height: 50px;
+				padding-top:rhythm(1);
+				padding-bottom:rhythm(1);
+				margin-top: rhythm(4);
+				@include adjust-font-size-to(nth($font-list, 3),3 );
+				text-align: right;
+				background-color:#D1D2D4;
+				font-weight: bolder;
+				span{
+					margin-left: rhythm(1);
+					color: $content_All_color;
+					@include adjust-font-size-to(nth($font-list, 4) );
+				}
+			}			
+		}
+		.shoppingbot{
+			padding-top: rhythm(6);
+			padding-right: rhythm(8);
+			padding-bottom: rhythm(6);
+			padding-left: rhythm(8);
+			button{
+				@include span(12);
+				padding: rhythm(1);
+				border:none;
+				outline: none;
+				cursor: pointer;
+				color: $content_font_color;
+				background-color: $content_All_color;
+				&:nth-child(1){
+					background-color: $content_gray_color; 
+					position: relative;					
+				}
+				&.shopicon{
+					&:before{
+						content: "";
+						position: absolute;
+						top: 6px;
+						left: 180px;
+						background-image: image-url("icon_shopping.png");
+						width: image-width("icon_shopping.png");
+						height: image-height("icon_shopping.png");
+					}
+				}
+				&:hover{
+					background-color: $content_black_color;
+				}
+			}
+			&.bt1{
+				overflow: hidden;
+				padding-top: rhythm(2);
+				padding-right: rhythm(4);
+				padding-bottom: rhythm(2);
+				padding-left: rhythm(4);
+			
+				button{
+					@include span(24);
+					padding: rhythm(1);
+					border:none;
+					outline: none;
+					cursor: pointer;
+					color: $content_font_color;
+					background-color: $content_All_color;
+					&:hover{
+						background-color: $content_black_color;
+					}
+				}				
+			}
+		}
+		.shopbox2{
+			.box{
+				overflow: hidden;
+				margin-bottom: rhythm(2);
+				.boxleft{
+					@include span(4);
+					h2{
+						width: 85%;
+						margin-top: rhythm(0.8);
+						font-weight: bolder;
+						@include adjust-font-size-to(nth($font-list, 3),2.5 );
+						  text-align: justify;
+						  text-justify: distribute-all-lines;
+						  text-align-last: justify;
+  						&::after{
+						  content: ".";
+						  display:block;
+						  width: 100%;
+						  visibility: hidden;
+						  height: 0;
+						  overflow: hidden;
+  						}
+					}
+				}
+				.boxright{
+					@include span(20);
+					input{
+						display: block;
+						border:none;
+						outline: none;
+						width: 100%;
+						height: 44px;
+						padding-left: 1%;
+						box-shadow: inset 1px 1px 2px rgba($content_black,0.3);
+						&:focus{
+							border:1px solid $content_All_color;
+							box-shadow: none;
+						}
+					}
+					p{
+						color: $content_All_color;
+						@include adjust-font-size-to(nth($font-list, 2) );
+					}
+					select{
+						@include span(6);
+						height: 44px;
+						margin-left: 0;
+						box-shadow: inset 1px 1px 2px rgba($content_black,0.3);
+						outline: none;
+						cursor: pointer;
+						&:focus{
+							border:1px solid $content_All_color;
+							box-shadow: none;
+
+						}
+						&:nth-child(2){
+							margin-right: 1%;
+						}						
+					}
+					.branch{
+						display: inline-block;
+						width: 52%;
+						height: 44px;
+						// margin-right: 4px;
+						box-shadow: inset 1px 1px 2px rgba($content_black,0.3);
+						outline: none;
+					}
+				}
+				.boxright1{
+					@include span(20);
+					.label {
+					    margin:0;
+					    display: inline-block;
+					    color:$content_All_color; 
+						font-weight: bolder;
+						@include adjust-font-size-to(nth($font-list, 3),2.5 );
+						cursor: pointer;
+					}
+					.radio {
+					    display: none
+					}
+					.radioInput {
+					    background-color: $content_font_color;
+					    border: 2px solid $content_All_color;
+					    display: inline-block;
+					    width: 20px;
+					    height: 20px;
+					    margin-right: 10px;
+					    margin-top: -1px;
+					    vertical-align: middle;
+					    line-height: 1;
+					}
+					.radio:checked+.radioInput:after {
+					    background-color:$content_All_color;
+					    content: "";
+					    display: inline-block;
+					    width: 12px;
+					    height: 12px;
+					    margin: 2px;   
+					}
+					.checkbox.radioInput,.radio:checked+.checkbox.radioInput:after {
+					    border-radius: 0
+					}
+				}
+				.maplist{
+					@include span(8);
+					height: 420px;
+					overflow-y:scroll; 
+					ul{
+						li{
+							padding-top: rhythm(0.3);
+							padding-bottom: rhythm(0.3);
+							border-bottom: 1px dashed  $content_black_color;
+							a{
+								position: relative;
+								display: block;
+								padding: rhythm(0.2);
+								margin-left: rhythm(4);
+								&:before{
+									content: "";
+									position: absolute;
+									top: 12px;
+									left: rhythm(-4);
+									background-image: image-url("Icon_map.png");
+									width:35px;
+									height:35px;
+									background-size:100%;
+								}
+								p{
+									color: $content_black_color;
+									@include adjust-font-size-to(nth($font-list, 2) );
+								}
+							}
+							&:hover{
+								background-color:#E0E0E0;
+							}
+						}
+					}
+				}
+				.mapinfo{
+					@include span(16 nest);
+					height: 420px;
+					// background-color: green;
+				}
+			}
+		}
+		.agreebox{
+			padding-top: rhythm(2);
+			padding-bottom: rhythm(1);
+			.label {
+			    margin:0;
+			    display: inline-block;
+				font-weight: bolder;
+				@include adjust-font-size-to(nth($font-list, 3),2.5 );
+				cursor: pointer;
+				a{
+					color:$content_All_color; 
+				}
+			}
+			.radio {
+			    display: none
+			}
+			.radioInput {
+			    background-color: $content_font_color;
+			    border: 2px solid $content_All_color;
+			    display: inline-block;
+			    width: 20px;
+			    height: 20px;
+			    margin-right: 10px;
+			    margin-top: -1px;
+			    vertical-align: middle;
+			    line-height: 1;
+			}
+			.radio:checked+.radioInput:after {
+			    background-color:$content_All_color;
+			    content: "";
+			    display: inline-block;
+			    width: 12px;
+			    height: 12px;
+			    margin: 2px;   
+			}
+			.checkbox.radioInput,.radio:checked+.checkbox.radioInput:after {
+			    border-radius: 0
+			}
+		}
+		.Complete_order{
+			margin-top: rhythm(2);
+			h2{
+				@include adjust-font-size-to(nth($font-list, 4),3.5 );
+				color: $content_All_color;
+				font-weight: bolder;
+			}
+			// .order_left{
+			// 	display: inline-block;
+			// 	display: inline-flex;
+			// 	@extend %center-center;
+			// 	width: 40px;
+			// 	// height: 400px;//要JS判斷高度
+			// 	color: $content_font_color;
+			// 	background-color:$content_gray_color;
+				
+			// 	p{
+			// 		-webkit-writing-mode: vertical-rl;
+			// 		writing-mode: vertical-rl;
+			// 		letter-spacing: 15px;
+			// 	}
+			// }
+			.order_right{
+				display: inline-block;
+				width: 1120px;
+				// float: right;
+				.contitle,.contentbox{
+					ul{
+						overflow: hidden;
+						border-top:1px solid $content_black_color;
+						li{
+							float: left;
+							text-align: center;
+							border-left:1px solid $content_black_color;
+							@include adjust-font-size-to(nth($font-list, 3),4 );
+							font-weight: bolder;
+							&:nth-child(1){
+								@include span(4 nest);
+							}
+							&:nth-child(2){
+								@include span(11 nest);
+							}
+							&:nth-child(3){
+								@include span(4 nest);
+							}
+							&:nth-child(4){
+								@include span(2 nest);
+							}
+							&:nth-child(5){
+								@include span(3 nest);
+							}
+							&:last-child{
+								border-right: 1px solid $content_black_color;
+							}												
+						}
+					}
+				}
+				.contentbox{
+					ul{
+						&:last-child{
+							border-bottom:1px solid $content_black_color;
+						}
+						li{
+							&:nth-child(2){
+								text-align: left;
+								padding-left: rhythm(4);
+								text-overflow: ellipsis;
+							    white-space: nowrap;
+							    overflow: hidden;
+							}
+						}					
+					}
+				}
+			}
+			.moneytotal{
+				h4{
+					display: block;
+					margin-top: rhythm(1);
+					margin-bottom: rhythm(1);
+					text-align: right;
+					@include adjust-font-size-to(nth($font-list, 4) );
+					color: $content_All_color;
+					font-weight: bolder; 
+					span{
+						@include adjust-font-size-to(nth($font-list, 4) );
+						margin-left: rhythm(1);
+					}
+				}
+			}
+		}
+		.recipient_information{
+			h2{
+				display: block;
+				@include adjust-font-size-to(nth($font-list, 3),3 );
+				p{
+					display: inline-block;
+					width: 200px;
+					font-weight: bolder;
+				}
+			}
+		}
+	}
+
+	// 訂單明細表
+	.myorder{
+		width: 1200px;
+		.myorderlist{
+			margin-bottom: rhythm(3);
+			.listitle{
+				display: flex;
+    			align-items: center;
+				a{
+				    position: relative;
+				    display: inline-block;
+				    width: 30px;
+				    height: 30px;
+				    border: 1px solid $content_black_color;
+				    @extend %indent;
+				    &:before{
+				    	position: absolute;
+					    top: 8px;
+					    left: 4px;
+					    content: "";
+					    width: 0;
+					    height: 0;
+					    border-style: solid;
+					    border-width: 14px 10px 0 10px;
+					    border-color: $content_black_color transparent transparent transparent;
+				    }
+					&.act:before{
+						border-width: 0px 10px 14px 10px;
+						border-color: transparent transparent $content_black_color transparent;	
+					}
+					&:hover{
+						border:1px solid $content_All_color;
+						&:before{
+							border-color: $content_All_color transparent transparent transparent;	
+						}
+						&.act:before{
+							border-color: transparent transparent $content_All_color transparent;	
+						}
+					}						    
+				}
+				h2{
+					display: inline-block;
+					margin-left: rhythm(3);
+					padding-right: rhythm(2);
+					font-weight: bolder;
+					span{
+						color:$content_All_color;
+					}
+					&:nth-child(2){
+						border-right:3px solid $content_All_color;
+					}
+				}
+			}				
+
+			.listcont{
+				width: 1040px;
+				padding:0;
+				margin: 0 auto;
+				.total_list{
+					margin-top: rhythm(2);
+					margin-bottom: rhythm(2);
+					margin-right: auto;
+					margin-left: auto;
+					ul{
+						overflow: hidden;
+						border-top:1px solid $content_black_color;
+						li{
+							height: 35px;
+							float: left;
+							text-align: center;
+							border-left:1px solid $content_black_color;
+							@include adjust-font-size-to(nth($font-list, 3),3.5 );
+							font-weight: bolder;
+							@include span(6 nest);						
+							&:last-child{
+								border-right: 1px solid $content_black_color;
+							}												
+						}
+						&:first-child{
+							color: $content_font_color;
+							background-color: $content_gray_color;
+						}
+						&:last-child{
+							border-bottom: 1px solid $content_black_color;
+						}							
+					}
+				}
+				h3{
+					display: inline-block;
+					padding: rhythm(1.2);
+					color: $content_font_color;
+					background-color: $content_gray_color;
+					cursor: pointer;
+					&:hover,&.act{
+						background-color: $content_All_color;
+					}
+
+				}
+				.schedule{
+					overflow: hidden;
+					margin-top: rhythm(2);
+					margin-bottom: rhythm(2);
+					.status{
+						display: inline-block;
+						overflow: hidden;
+						width: 600px;
+						ul{
+							position: relative;
+							left: -30px;
+							overflow: hidden;
+							li{
+								display: block;
+								@include span(6 nest);
+								color: $content_black_color;
+								border:none;
+								position: relative;
+								text-align: center;
+								@include adjust-font-size-to(nth($font-list, 3),3 );
+								&:before{
+									content: "";
+									display: block;
+									position: absolute;
+									top: 12px;
+									left: 0px;								
+									width: 100%;
+									height: 1px;
+									background-color: $content_gray_color;
+									z-index: -1;
+								}
+								&:first-child,&:last-child{
+									&:before{
+										width: 50%;
+									}
+								}
+								&:first-child{
+									&:before{
+										left: 50%;
+									}
+								}
+								i{
+									display: block;
+								    width: 25px;
+								    height: 25px;
+								    margin: 0 auto;
+								    border-radius: 100%;
+								    background-color: $content_gray_color;
+									&.step{
+										 background-color: $content_All_color;
+									}
+								}
+
+								b{
+									display: block;
+									width: 50%;
+									@include adjust-font-size-to(nth($font-list, 3) );
+									padding: 0;
+									margin: 5px auto;
+									border:1px solid $content_All_color;
+								}
+							}
+						}						
+					}
+					.status_button{
+						display: inline-block;
+						width: 150px;
+						text-align: center;
+						overflow: hidden;
+						float: right;
+						@include adjust-font-size-to(nth($font-list, 3),3 );
+						a{
+							display: block;									
+							width: 25px;
+							height: 25px;
+							margin: 0 auto;
+							dd{
+								display: block;
+								&:before,&:after{
+									content: "";
+									display: block;
+									width: 100%;
+									height: 5px;
+							   		background-color: $content_All_color;
+								}
+								&:before{
+            						@include transform(translateY(10px)rotate(45deg));
+								}
+								&:after{
+            						@include transform(translateY(5px)rotate(-45deg));
+								}
+							}								
+						}
+						.inp_text{
+							display: block;
+							width: 100%;
+							padding-top: rhythm(0.4);
+							padding-right: rhythm(1);
+							padding-bottom: rhythm(0.4);
+							padding-left: rhythm(1);							
+							margin: 0 auto;
+							border:1px solid $content_All_color;
+							outline:none;
+							text-align: center;
+							color: $content_All_color;
+							font-weight: bolder;
+							letter-spacing: 2px;
+						}
+						.again{
+							display:inline-block;
+							width: 100%;
+							box-shadow: none;
+							margin:0 auto;
+							padding-top: rhythm(0.5);
+							padding-right: rhythm(1);
+							padding-bottom: rhythm(0.5);
+							padding-left: rhythm(1);
+							color: $content_font_color;					
+							background-color: $content_All_color;
+							@include adjust-font-size-to(nth($font-list, 3) );
+							border:none;
+							outline:none;
+							cursor: pointer;
+							&:hover{
+								background-color: $content_black_color;
+							}
+						}
+						dt{
+							display: block;
+							width: 100%;
+							height: 25px;
+							margin: 0 auto;
+							color: $content_All_color;
+							@include adjust-font-size-to(nth($font-list, 2),2.5 );
+						}										
+					}	
+				}
+				.product_information{
+					.returncont{
+
+						overflow: hidden;
+						margin-bottom: rhythm(2);
+						.right{
+							@include span(6);
+							text-align: right;
+							float: right;
+							h4{
+								display: block;
+								overflow: hidden;
+								p{
+									display: inline-block;
+									@include adjust-font-size-to(nth($font-list, 3),2.5 );
+									padding-right: rhythm(2);
+									&.return{
+										color: $content_All_color;
+									}
+								}
+								.returnbt{
+									display:inline-block;
+									width: 65px;
+									box-shadow: none;
+									margin:0 auto;
+									padding-top: rhythm(0.5);
+									padding-right: rhythm(1);
+									padding-bottom: rhythm(0.5);
+									padding-left: rhythm(1);
+									margin-right: rhythm(2);
+									color: $content_font_color;					
+									background-color: $content_gray_color;
+									@include adjust-font-size-to(nth($font-list, 3) );
+									border:none;
+									outline:none;
+									cursor: pointer;
+									&:hover{
+										background-color: $content_All_color;
+									}									
+								}
+								.label {
+								    margin:0;
+								    display: inline-block;
+								    color:$content_All_color; 
+									font-weight: bolder;
+									@include adjust-font-size-to(nth($font-list, 3),2.5 );
+									cursor: pointer;
+								}
+								.radio { 
+								    display: none;
+								}
+								.radioInput {
+								    background-color: $content_font_color;
+								    border: 2px solid $content_All_color;
+								    display: inline-block;
+								    width: 20px;
+								    height: 20px;
+								    margin-top: -3px;
+								    vertical-align: middle;
+								    line-height: 1;
+								}
+								.radio:checked+.radioInput:after {
+								    background-color:$content_All_color;
+								    content: "";
+								    display: inline-block;
+								    width: 12px;
+								    height: 12px;
+								    margin: 2px;   
+								}
+								.checkbox.radioInput,.radio:checked+.checkbox.radioInput:after {
+								    border-radius: 0
+								}
+							}							
+						}
+					}
+					.cont{
+						overflow: hidden;
+						margin-top: rhythm(1);
+						.left{
+							@include span(18 nest);
+							border-bottom:1px dashed $content_black_color;
+							padding-bottom: rhythm(1);
+							h4{
+								display: block;
+								overflow: hidden;
+								p{
+									@include span(1 nest);
+									@include adjust-font-size-to(nth($font-list, 3),2.5 );
+									&:first-child{
+										@include span(18 nest);
+									}
+									a{
+										color:$content_black;
+										
+									}
+									&.money{
+										@include span(5 nest);
+										text-align: right;
+									}
+								}
+							}
+							.status{
+								display: inline-block;
+								overflow: hidden;
+								width: 600px;
+								margin-top: rhythm(2);
+								
+								ul{
+									position: relative;
+									left: -30px;
+									overflow: hidden;
+									li{
+										display: block;
+										@include span(6 nest);
+										color: $content_black_color;
+										border:none;
+										position: relative;
+										text-align: center;
+										@include adjust-font-size-to(nth($font-list, 3),3 );
+										&:before{
+											content: "";
+											display: block;
+											position: absolute;
+											top: 12px;
+											left: 0px;								
+											width: 100%;
+											height: 1px;
+											background-color: $content_gray_color;
+											z-index: -1;
+										}
+										&:first-child,&:last-child{
+											&:before{
+												width: 50%;
+											}
+										}
+										&:first-child{
+											&:before{
+												left: 50%;
+											}
+										}
+										i{
+											display: block;
+										    width: 25px;
+										    height: 25px;
+										    margin: 0 auto;
+										    border-radius: 100%;
+										    background-color: $content_gray_color;
+											&.step{
+												 background-color: $content_All_color;
+											}
+										}
+										b{
+											display: block;
+											@include adjust-font-size-to(nth($font-list, 2) );
+											padding: 0;
+											margin: 0px auto;
+											color:$content_gray_color;
+											position: relative;
+											top: -5px;
+											&.fail{
+												color:$content_All_color;
+											}
+										}
+									}
+								}						
+							}
+						}
+						.right{
+							@include span(6);
+							text-align: right;
+							h4{
+								display: block;
+								overflow: hidden;
+								p{
+									display: inline-block;
+									@include adjust-font-size-to(nth($font-list, 3),2.5 );
+									padding-right: rhythm(2);
+									&.return{
+										color: $content_All_color;
+									}
+								}
+								.label {
+								    margin:0;
+								    display: inline-block;
+								    color:$content_All_color; 
+									font-weight: bolder;
+									@include adjust-font-size-to(nth($font-list, 3),2.5 );
+									cursor: pointer;
+								}
+								.radio {
+								    display: none
+								}
+								.radioInput {
+								    background-color: $content_font_color;
+								    border: 2px solid $content_All_color;
+								    display: inline-block;
+								    width: 20px;
+								    height: 20px;
+								    margin-top: -3px;
+								    vertical-align: middle;
+								    line-height: 1;
+								}
+								.radio:checked+.radioInput:after {
+								    background-color:$content_All_color;
+								    content: "";
+								    display: inline-block;
+								    width: 12px;
+								    height: 12px;
+								    margin: 2px;   
+								}
+								.checkbox.radioInput,.radio:checked+.checkbox.radioInput:after {
+								    border-radius: 0
+								}
+							}
+						}
+					}
+				}
+			}
+			.recipient_information{
+				overflow: hidden;
+				margin-top: rhythm(5);
+				h1{
+					margin-bottom: rhythm(2);
+				}
+				.box{
+					h2{
+						@include span(12);
+						@include adjust-font-size-to(nth($font-list, 3),4 );
+						overflow: hidden;
+						p{
+							display: inline-block;
+							font-weight: bolder;
+							width: 120px;
+						}
+						span{
+							color: $content_gray_color;
+							margin-left: rhythm(2);
+						}
+						dd{
+							color: $content_gray_color;
+							margin-left: rhythm(14);
+						}
+					}
+					div{
+						clear: both;
+						margin: 0 auto;
+						padding-top:rhythm(1.5);
+						text-align: center;
+					}
+					div>button{
+						width: 400px;	
+						padding: rhythm(1.2);
+						border:none;
+						outline: none;
+						cursor: pointer;
+						color: $content_font_color;
+						background-color: $content_All_color;
+						&:hover{
+							background-color: $content_black_color;
+						}							
+					}
+				}					
+			}			
+		}
+	}
+
+	// 購物小幫手&退貨流程
+	.buyhelp,.return_process{
+		width: 1200px;
+		h2{
+			margin-top: rhythm(0.5);
+			margin-bottom: rhythm(0.5);
+			@include adjust-font-size-to(nth($font-list, 3) );
+			color: $content_All_color;
+			text-align: center;
+			font-weight: bolder;
+			a{
+				text-decoration: underline;
+			}
+		}
+		.contentimg{
+			margin-top: rhythm(2);
+		}
+		.textbox{
+			h3{
+				display: block;
+				color: $content_font_color;
+				background-color: $returnColor;
+				text-align: center;
+				@include adjust-font-size-to(nth($font-list, 4),3.5 );
+				margin-bottom: rhythm(1.5);
+			}
+			ol{
+				list-style: decimal;
+				padding-left: rhythm(2);
+				li{
+					@include adjust-font-size-to(nth($font-list, 3),3);
+				}
+			}
+		}
+	}
+	
+	// 服務條款
+	.service,.privacy{
+		width: 1200px;
+		.textbox{
+			padding-top: rhythm(1);
+			padding-bottom: rhythm(1);
+			padding-right: rhythm(2);
+			padding-left: rhythm(2);
+			margin-top: rhythm(1);
+			margin-bottom: rhythm(2);
+			border:1px solid $content_All_color;
+			p{
+				color: $textColor;
+				@include adjust-font-size-to(nth($font-list, 3),2.5 );
+			}
+		}
+		.text{
+			padding-left: rhythm(2);
+			h2{
+				@include adjust-font-size-to(nth($font-list, 4) );
+				margin-top: rhythm(0.5);
+				margin-bottom: rhythm(0.5);
+			}
+			ol{
+				list-style: decimal;
+				padding-left: rhythm(6);
+				li{
+					@include adjust-font-size-to(nth($font-list, 3),3 );
+					p{
+						@include adjust-font-size-to(nth($font-list, 3),3 );
+					}
+					a{
+						display: inline-block;
+						color:$content_All_color;
+					}
+				}
+			}
+			h3{
+				@include adjust-font-size-to(nth($font-list, 3),3 );
+				margin-bottom: rhythm(2);
+			}
+			h4{
+				padding-left: rhythm(5.5);
+				@include adjust-font-size-to(nth($font-list, 3),3 );
+				span{
+					@include adjust-font-size-to(nth($font-list, 2) );
+				}
+			}
+		}
+	}
+
+	// 設定密碼
+	.setpassowrd{
+		.shopbox2{
+			.box{
+				overflow: hidden;
+				margin-bottom: rhythm(2);
+				.boxleft{
+					@include span(4);
+					h2{
+						width: 85%;
+						margin-top: rhythm(0.8);
+						font-weight: bolder;
+						@include adjust-font-size-to(nth($font-list, 3),2.5 );
+						  text-align: justify;
+						  text-justify: distribute-all-lines;
+						  text-align-last: justify;
+  						&::after{
+						  content: ".";
+						  display:block;
+						  width: 100%;
+						  visibility: hidden;
+						  height: 0;
+						  overflow: hidden;
+  						}
+					}
+				}
+				.boxright{
+					@include span(20);
+					input{
+						display: block;
+						border:none;
+						outline: none;
+						width: 100%;
+						height: 44px;
+						padding-left: 1%;
+						box-shadow: inset 1px 1px 2px rgba($content_black,0.3);
+						&:focus{
+							border:1px solid $content_All_color;
+							box-shadow: none;
+						}
+					}
+					p{
+						color: $content_All_color;
+						@include adjust-font-size-to(nth($font-list, 2) );
+					}
+					select{
+						width: 49%;
+						height: 44px;
+						margin-right: 4px;
+						box-shadow: inset 1px 1px 2px rgba($content_black,0.3);
+						outline: none;
+						cursor: pointer;
+						&:focus{
+							border:1px solid $content_All_color;
+							box-shadow: none;
+						}
+						&:nth-child(2){
+							margin-left: 4px;
+							margin-right: 0;
+						}						
+					}
+				}
+			}
+		}
+		.shoppingbot{
+			padding-top: rhythm(6);
+			padding-right: rhythm(8);
+			padding-bottom: rhythm(6);
+			padding-left: rhythm(8);
+			button{
+				@include span(12);
+				padding: rhythm(1);
+				border:none;
+				outline: none;
+				cursor: pointer;
+				color: $content_font_color;
+				background-color: $content_All_color;
+				&:nth-child(1){
+					background-color: $content_gray_color; 
+					position: relative;					
+				}
+				&.shopicon{
+					&:before{
+						content: "";
+						position: absolute;
+						top: 6px;
+						left: 180px;
+						background-image: image-url("icon_shopping.png");
+						width: image-width("icon_shopping.png");
+						height: image-height("icon_shopping.png");
+					}
+				}
+				&:hover{
+					background-color: $content_black_color;
+				}
+			}
+			&.bt1{
+				overflow: hidden;
+				padding-top: rhythm(2);
+				padding-right: rhythm(4);
+				padding-bottom: rhythm(2);
+				padding-left: rhythm(4);
+			
+				button{
+					@include span(24);
+					padding: rhythm(1);
+					border:none;
+					outline: none;
+					cursor: pointer;
+					color: $content_font_color;
+					background-color: $content_All_color;
+					&:hover{
+						background-color: $content_black_color;
+					}
+				}				
+			}
+		}
+	}
+}
+
+// 取消訂單浮層
+.blackblack1,.blackblack2{
+	@extend %center-center;
+	position: fixed;
+	top: 0;
+	left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    display: none;
+    .black{
+    	display: block;
+    	background-color: rgba(0, 0, 0, 0.6);
+   	 	width: 100%;
+   	 	height: 100%;
+    }
+    .contentbox{
+    	position: absolute;
+		top: 50%;
+		left: 50%;
+		display: block;
+		margin-left: -250px;
+		padding: rhythm(3);
+		width: 500px;
+		height: auto;
+		background-color: $content_font_color;
+    	flex-direction: column;
+    	align-items: center;
+    	justify-content: center;
+    	h1{
+    		display: block;
+    		text-align: center;
+    		@include adjust-font-size-to(nth($font-list, 4) );
+    	}
+    	.yes{
+    		display: block;
+    		@include span(24);
+    		margin: rhythm(1);
+    	}
+    	button{
+    		@include span(12);
+			padding: rhythm(1);
+			border:none;
+			outline: none;
+			cursor: pointer;
+			color: $content_font_color;
+			background-color: $content_All_color;
+			&:hover{
+				background-color: $content_black_color;
+			}	
+    	}
+    }	
+}
+
+
+// 地
+footer{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 80px;
+	margin-top: rhythm(3);
+	&:before{
+		content: "";
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 80px;
+		background-color: $content_All_color;
+		z-index: -1;
+	}
+	.container{
+		@extend %Basic-setting;
+			height: 80px;
+			display: flex;
+			align-items: center;
+			justify-content:center;
+			background-color: $content_All_color;
+		ul{
+			display: flex;
+			align-items: center;
+			justify-content:center;
+			li{
+				margin-left: rhythm(1);
+				margin-right: rhythm(1);
+				a{
+					display: block;				
+					padding-top: rhythm(0.5);
+					padding-bottom: rhythm(0.5);
+					padding-right: rhythm(1);
+					padding-left: rhythm(1);
+					color: $content_font_color;
+					border:1px solid $content_font_color;
+					&:hover{
+						color: $content_All_color;
+						background-color: $content_font_color;
+					}				
+				}
+
+			}
+		}
+	}
+}
+
+// GOTOP按鈕
+#gotop {
+    display: none;
+    position: fixed;
+    z-index: 5;
+    right: 30px;
+    bottom: 50px;
+    padding: 10px 10px 3px 10px;
+    border-radius: 6px;
+    font: 12px/30px Verdana;
+    text-align: center;
+    color: #020304;
+    background-color: rgba(black, 0.8);
+    color: $content_font_color;
+    cursor: pointer;
+    opacity: 0.5;
+    &:before{
+	    content: "";
+	    position: absolute;
+	    top: 7px;
+	    left: 18px;
+	    width: 0;
+	    height: 0;
+	    border: 4px solid #ccc;
+	    border-color: transparent transparent #ccc;    	
+    }
+}
+
+// alert浮層
+.alertbox{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display:none;
+    // display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(#000,0.8);
+    z-index: 99;
+
+    // X樣式
+    .closeclose{
+        @extend %setting;
+        position: absolute;
+        right: -20px;
+        top: -20px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color:$purple_color;
+        &:before,&:after{
+            position: absolute;
+            content: "";
+            display: block;
+            width: 40px;
+            height: 5px;
+            background-color: $white_color;
+        }
+        &:before{
+            @include transform(rotate(-45deg));
+            top: 28px;
+            left: 10px;
+        }
+        &:after{
+            @include transform(rotate(45deg));
+            top: 28px;
+            left: 10px;           
+        }      
+    }
+
+	$alert_terms_w:400px;
+	$alert_terms_h:600px;
+    .alert_terms{
+        @extend %setting;  
+        position: relative;
+        top: 50%;
+        left: 50%;
+        margin-top: $alert_terms_h/2*-1;
+        margin-left: $alert_terms_w/2*-1;
+        width: $alert_terms_w;
+        height: $alert_terms_h;
+        background-color:$white_color;
+        padding: rhythm(2);
+        .contbox{
+           // height: 650px;
+           // overflow-y:scroll; 
+           h1{
+                text-align: center;
+                font-weight: bolder;
+                color:$black_color;
+                @include adjust-font-size-to(nth($font-list, 4) );            
+           }
+           h2{
+                @include adjust-font-size-to(nth($font-list, 3) );
+                margin-top: 2%;
+                margin-bottom:2%;
+            }          
+           dd{
+            @include adjust-font-size-to(nth($font-list, 2) );
+            color: $purple_color;
+            text-align: center;
+            font-weight: bolder;           
+           }
+            .contentimg{
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+            }          
+           .textbox{
+                padding: 2%;
+                margin-top:1%;
+                margin-bottom:3%;
+                border:1px solid $purple_color;
+                p{
+                    color: $textColor;
+                    @include adjust-font-size-to(nth($font-list, 2),2 );
+                }
+           }
+           .text{
+                padding-left:2%;
+                h2{
+                    @include adjust-font-size-to(nth($font-list, 3) );
+                    margin-top: 2%;
+                    margin-bottom:2%;
+                }
+                ol{
+                    list-style: decimal;
+                    padding-left:5%;
+                    li{
+                        @include adjust-font-size-to(nth($font-list, 2),2.5 );
+                        p{
+                            @include adjust-font-size-to(nth($font-list, 2),2.5 );
+                        }
+                        a{
+                            display: inline-block;
+                            color:$purple_color;
+                            word-break: break-all;
+                        }
+                    }
+                }
+                h3{
+                    @include adjust-font-size-to(nth($font-list, 2),2.5 );
+                    margin-bottom: 2%;
+                }
+                h4{
+                    padding-left:5%;
+                    @include adjust-font-size-to(nth($font-list, 2),2.5 );
+                    span{
+                        @include adjust-font-size-to(nth($font-list, 2) );
+                    }
+                }
+           }
+        }
+        .box{
+        	@extend %setting;
+        	width: 250px;
+        	height: 501px;         	
+        	overflow: hidden; 
+        	background-image: image-url("iphone_bg.png");
+        	background-size: 100%;
+        	margin-top: rhythm(1);        	      	
+        }
+        .step{
+        	@extend %setting;
+        	ul{
+        		width: 1750px;
+        		overflow: hidden;
+        		position: relative;
+        		left:0px;
+        		li{
+        			position: relative;
+        			width: 250px;
+        			height: 501px;
+        			float: left;
+        			img{
+        				position: absolute;
+        				left: 0;
+        				top: 0;
+        				width: 100%;
+        				height: auto;
+        			}
+        			.text{
+        				position: absolute;
+        				z-index: 1;
+        			}
+        			p{
+        				display: inline-block;
+        				padding: rhythm(1);
+        				@include adjust-font-size-to(nth($font-list, 3) );
+        				text-align: center;
+        				color:$white_color; 
+        				background-color: $black_color;
+        			}
+        			.finger{
+     					@extend %setting;
+    					width: 40px;
+    					height: 40px;       				
+        				position: absolute;
+        				z-index: 1;
+        				position: absolute;
+        				right: 0;
+        				bottom: 0;
+        				;
+        				a{
+							@extend %setting;
+							width: 40px;
+    						height: 40px; 
+        					background-image: image-url("finger.png");
+        					background-size: 100%;
+        				}
+        				.bg{
+	     					@extend %setting;
+	     					position: absolute;
+	     					top: 0px;
+	     					left: 0px;         					
+        					background-color:rgba( #FDF25D,0.8);
+        					z-index: -1;
+        					border-radius: 50%;
+        					width: 40px;
+        					height: 40px;
+        					@include animation(1s infinite bigsmail);
+        					@include transform(scale(1));
+        				}
+        			}   
+        			&:nth-child(1){
+        				.text{
+							top: 90px;
+							left: 55px;
+        				}
+        				.finger{
+        					bottom: -22px;
+        				}
+        			}
+         			&:nth-child(2){
+        				.text{
+							top: 325px;
+							left: 55px;
+        				}
+        				.finger{
+        					bottom: -60px;
+        					left: 75px;
+        				}
+        			}
+        			&:nth-child(3){
+        				.text{
+							top: 70px;
+							left: 32px;
+        				}
+        				.finger{
+        					bottom: -50px;
+        				}
+        			}
+        			&:nth-child(4){
+        				.text{
+							top: 175px;
+							left: 20px;
+        				}
+        				.finger{
+        					bottom: -35px;
+    						left: 70px;
+        				}
+        			}
+        			&:nth-child(5){
+        				.text{
+							top: 330px;
+							left: 22px;
+        				}
+        				.finger{
+        					bottom: -65px;
+        				}
+        			}
+        			&:nth-child(6){
+        				.text{
+							top: 330px;
+							left: 22px;
+        				}
+        				.finger{
+        					bottom: 45px;
+        				}
+        			}
+        			&:nth-child(7){
+        				.text{
+							top: 280px;
+							left: 48px;
+        				}
+        				.finger{
+        					bottom: 45px;
+        				}
+        			}
+					
+					span{
+						@extend %setting;
+						position: absolute;
+						padding: rhythm(1);
+						bottom: 70px;
+						right: 25px;
+						background-color:$purple_color;
+						color: $white_color;
+						z-index: 1;
+						cursor: pointer;
+					}
+
+
+        		}
+        	}
+        }      
+    }
+}
+
+
+@include keyframes(bigsmail){
+    from {
+        @include transform(scale(0.8));
+    }
+    to {
+        @include transform(scale(1.2));
+    }
+};
