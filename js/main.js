@@ -27,12 +27,14 @@ $(function(){
 
 	function blackgoshop(){
 		$(".shoppinglist").stop(true,true).fadeIn()
-		x = $(".shoppinglist .list").outerHeight()
-		if (x > 440) {
-			$(".shoppinglist .list").addClass('Beyond')
-		}else {
-			return
-		};	
+
+		// x = $(".shoppinglist .list").outerHeight()
+		// if (x > 440) {
+		// 	$(".shoppinglist .list").addClass('Beyond')
+		// }else {
+		// 	return
+		// };	
+
 	}
 
 
@@ -137,6 +139,23 @@ $(function(){
 	$(".blackblack2 .contentbox .yes button").eq(1).click(function(){
 		$(".blackblack2").fadeOut()
 	})
+
+	// 查詢物流進度按扭區塊
+	$(".logistics_progress").click(function(){
+		$(".blackblack3").css('display', 'block')
+		return false
+	})
+	$(".black").click(function() {
+		$(".blackblack3").fadeOut()
+	});
+	$(".blackblack3 .contentbox .yes button").eq(0).click(function(){
+		$(".blackblack3").fadeOut()
+	})
+	$(".blackblack3 .contentbox .yes button").eq(1).click(function(){
+		$(".blackblack3").fadeOut()
+	})
+
+
 
 
 

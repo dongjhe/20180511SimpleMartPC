@@ -26,7 +26,7 @@ header .container .member_area .simplelogo h1 a, header .container .member_area 
 
 main .starblock, main .shelfblock, main .productList, main .member_Login, main .forget_password, main .return_application, main .return_page, main .shoppingdetails, main .myorder, main .buyhelp, main .return_process, main .service, main .privacy, main .setpassowrd, main .Return_information, main .payment_information, footer .container { display: block; width: 1220px; margin: 0 auto; overflow: hidden; }
 
-header .container .member_area .simplego_logo, main .shoppingdetails .shopbox table tr td .tdbox6, .blackblack1, .blackblack2 { display: flex; align-items: center; justify-content: center; }
+header .container .member_area .simplego_logo, main .shoppingdetails .shopbox table tr td .tdbox6, .blackblack1, .blackblack2, .blackblack3 { display: flex; align-items: center; justify-content: center; }
 
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
@@ -69,6 +69,7 @@ header .container .nav_area .goshop_area h2 { display: inline-block; width: 110p
 header .container .nav_area .goshop_area h2 a { display: inline-flex; justify-content: center; align-items: center; height: 45px; font-weight: bolder; color: #FFFFFF; }
 header .container .nav_area .goshop_area h2 a span { margin: 3px; }
 header .container .nav_area .goshop_area .shoppinglist { display: none; position: absolute; top: 60px; right: 0; width: 315px; background-color: #FFFFFF; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); z-index: 2; }
+header .container .nav_area .goshop_area .shoppinglist .list { padding: 10px; }
 header .container .nav_area .goshop_area .shoppinglist .list.Beyond { height: 440px; overflow-y: scroll; }
 header .container .nav_area .goshop_area .shoppinglist .list ul li { position: relative; border-bottom: 1px solid #DFDFDF; overflow: hidden; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; color: #666666; }
 header .container .nav_area .goshop_area .shoppinglist .list ul li .pic { width: 95px; float: left; }
@@ -81,7 +82,9 @@ header .container .nav_area .goshop_area .shoppinglist .list ul li .details a p 
 header .container .nav_area .goshop_area .shoppinglist .list ul li .details .mony { font-size: 14px; line-height: 20px; color: #A7017A; }
 header .container .nav_area .goshop_area .shoppinglist .list ul li .details .mony span { font-size: 20px; line-height: 30px; font-weight: bolder; }
 header .container .nav_area .goshop_area .shoppinglist .list ul li .del { position: absolute; bottom: 9px; right: 14px; }
-header .container .nav_area .goshop_area .shoppinglist button { margin: 10px; padding: 8px; width: 295px; border: none; color: #FFFFFF; background-color: #A7017A; cursor: pointer; outline: none; }
+header .container .nav_area .goshop_area .shoppinglist .list h1 { font-size: 20px; font-weight: bold; }
+header .container .nav_area .goshop_area .shoppinglist .list h3 { display: block; width: 100%; height: 32px; line-height: 32px; padding-left: 20px; font-size: 18px; }
+header .container .nav_area .goshop_area .shoppinglist button { padding: 8px; width: 100%; border: none; color: #FFFFFF; background-color: #A7017A; cursor: pointer; outline: none; }
 header .container .nav_area .goshop_area .shoppinglist button:hover { background-color: #3E3A3A; }
 header:before { content: ""; display: block; position: absolute; bottom: 0; left: 0; width: 100%; height: 60px; background-color: #A7017A; }
 
@@ -291,18 +294,18 @@ main .shoppingdetails .shoppingbot.bt1 { overflow: hidden; padding-top: 20px; pa
 main .shoppingdetails .shoppingbot.bt1 button { width: 97.91667%; float: left; margin-left: 1.04167%; margin-right: 1.04167%; padding: 10px; border: none; outline: none; cursor: pointer; color: #FFFFFF; background-color: #A7017A; }
 main .shoppingdetails .shoppingbot.bt1 button:hover { background-color: #3E3A3A; }
 main .shoppingdetails .shopbox2 .box { overflow: hidden; margin-bottom: 20px; }
-main .shoppingdetails .shopbox2 .box .boxleft { width: 14.58333%; float: left; margin-left: 1.04167%; margin-right: 1.04167%; }
+main .shoppingdetails .shopbox2 .box .boxleft { width: 22.91667%; float: left; margin-left: 1.04167%; margin-right: 1.04167%; }
 main .shoppingdetails .shopbox2 .box .boxleft h2 { width: 85%; margin-top: 8px; font-weight: bolder; font-size: 16px; line-height: 25px; text-align: justify; text-justify: distribute-all-lines; text-align-last: justify; }
 main .shoppingdetails .shopbox2 .box .boxleft h2::after { content: "."; display: block; width: 100%; visibility: hidden; height: 0; overflow: hidden; }
-main .shoppingdetails .shopbox2 .box .boxright { width: 81.25%; float: left; margin-left: 1.04167%; margin-right: 1.04167%; }
+main .shoppingdetails .shopbox2 .box .boxright { width: 72.91667%; float: left; margin-left: 1.04167%; margin-right: 1.04167%; }
 main .shoppingdetails .shopbox2 .box .boxright input { display: block; border: none; outline: none; width: 100%; height: 44px; padding-left: 1%; box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3); }
 main .shoppingdetails .shopbox2 .box .boxright input:focus { border: 1px solid #A7017A; box-shadow: none; }
 main .shoppingdetails .shopbox2 .box .boxright p { color: #A7017A; font-size: 14px; line-height: 20px; }
-main .shoppingdetails .shopbox2 .box .boxright select { width: 22.91667%; float: left; margin-left: 1.04167%; margin-right: 1.04167%; height: 44px; margin-left: 0; box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3); outline: none; cursor: pointer; }
+main .shoppingdetails .shopbox2 .box .boxright select { width: 49%; height: 44px; box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3); outline: none; cursor: pointer; margin-bottom: 10px; }
 main .shoppingdetails .shopbox2 .box .boxright select:focus { border: 1px solid #A7017A; box-shadow: none; }
-main .shoppingdetails .shopbox2 .box .boxright select:nth-child(2) { margin-right: 1%; }
-main .shoppingdetails .shopbox2 .box .boxright .branch { display: inline-block; width: 52%; height: 44px; box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3); outline: none; }
-main .shoppingdetails .shopbox2 .box .boxright1 { width: 81.25%; float: left; margin-left: 1.04167%; margin-right: 1.04167%; }
+main .shoppingdetails .shopbox2 .box .boxright select:nth-child(2) { margin-left: 1%; margin-right: 0; }
+main .shoppingdetails .shopbox2 .box .boxright .branch { display: block; width: 100%; height: 44px; box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3); outline: none; margin-top: 10px; }
+main .shoppingdetails .shopbox2 .box .boxright1 { width: 72.91667%; float: left; margin-left: 1.04167%; margin-right: 1.04167%; }
 main .shoppingdetails .shopbox2 .box .boxright1 .label { margin: 0; display: inline-block; color: #A7017A; font-weight: bolder; font-size: 16px; line-height: 25px; cursor: pointer; }
 main .shoppingdetails .shopbox2 .box .boxright1 .radio { display: none; }
 main .shoppingdetails .shopbox2 .box .boxright1 .radioInput { background-color: #FFFFFF; border: 2px solid #A7017A; display: inline-block; width: 20px; height: 20px; margin-right: 10px; margin-top: -1px; vertical-align: middle; line-height: 1; }
@@ -339,6 +342,11 @@ main .shoppingdetails .Complete_order .moneytotal h4 { display: block; margin-to
 main .shoppingdetails .Complete_order .moneytotal h4 span { font-size: 18px; line-height: 30px; margin-left: 10px; }
 main .shoppingdetails .recipient_information h2 { display: block; font-size: 16px; line-height: 30px; }
 main .shoppingdetails .recipient_information h2 p { display: inline-block; width: 200px; font-weight: bolder; }
+main .shoppingdetails .payment_number { margin-top: 50px; }
+main .shoppingdetails .payment_number h2 { font-size: 30px; line-height: 30px; color: #A7017A; }
+main .shoppingdetails .payment_number p { font-size: 16px; line-height: 30px; }
+main .shoppingdetails .payment_number h3 { font-size: 16px; line-height: 30px; margin-top: 10px; }
+main .shoppingdetails .payment_number h3 span { color: red; }
 main .myorder { width: 1200px; }
 main .myorder .myorderlist { margin-bottom: 30px; }
 main .myorder .myorderlist .listitle { display: flex; align-items: center; }
@@ -350,7 +358,7 @@ main .myorder .myorderlist .listitle a:hover:before { border-color: #A7017A tran
 main .myorder .myorderlist .listitle a:hover.act:before { border-color: transparent transparent #A7017A transparent; }
 main .myorder .myorderlist .listitle h2 { display: inline-block; margin-left: 30px; padding-right: 20px; font-weight: bolder; }
 main .myorder .myorderlist .listitle h2 span { color: #A7017A; }
-main .myorder .myorderlist .listitle h2:nth-child(2) { border-right: 3px solid #A7017A; }
+main .myorder .myorderlist .listitle h2:nth-child(2), main .myorder .myorderlist .listitle h2:nth-child(3) { border-right: 3px solid #A7017A; }
 main .myorder .myorderlist .listcont { width: 1040px; padding: 0; margin: 0 auto; }
 main .myorder .myorderlist .listcont .total_list { margin-top: 20px; margin-bottom: 20px; margin-right: auto; margin-left: auto; }
 main .myorder .myorderlist .listcont .total_list ul { overflow: hidden; border-top: 1px solid #3E3A3A; }
@@ -424,6 +432,8 @@ main .myorder .myorderlist .recipient_information .box h2 { width: 47.91667%; fl
 main .myorder .myorderlist .recipient_information .box h2 p { display: inline-block; font-weight: bolder; width: 120px; }
 main .myorder .myorderlist .recipient_information .box h2 span { color: #808285; margin-left: 20px; }
 main .myorder .myorderlist .recipient_information .box h2 dd { color: #808285; margin-left: 140px; }
+main .myorder .myorderlist .recipient_information .box h2 .logistics_progress { color: #FFFFFF; background-color: #A7017A; padding: 5px; margin-left: 5px; }
+main .myorder .myorderlist .recipient_information .box h2 .logistics_progress:hover { background-color: #808285; }
 main .myorder .myorderlist .recipient_information .box div { clear: both; margin: 0 auto; padding-top: 15px; text-align: center; }
 main .myorder .myorderlist .recipient_information .box div > button { width: 400px; padding: 12px; border: none; outline: none; cursor: pointer; color: #FFFFFF; background-color: #A7017A; }
 main .myorder .myorderlist .recipient_information .box div > button:hover { background-color: #3E3A3A; }
@@ -466,13 +476,13 @@ main .setpassowrd .shoppingbot.bt1 { overflow: hidden; padding-top: 20px; paddin
 main .setpassowrd .shoppingbot.bt1 button { width: 97.91667%; float: left; margin-left: 1.04167%; margin-right: 1.04167%; padding: 10px; border: none; outline: none; cursor: pointer; color: #FFFFFF; background-color: #A7017A; }
 main .setpassowrd .shoppingbot.bt1 button:hover { background-color: #3E3A3A; }
 
-.blackblack1, .blackblack2 { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; display: none; }
-.blackblack1 .black, .blackblack2 .black { display: block; background-color: rgba(0, 0, 0, 0.6); width: 100%; height: 100%; }
-.blackblack1 .contentbox, .blackblack2 .contentbox { position: absolute; top: 50%; left: 50%; display: block; margin-left: -250px; padding: 30px; width: 500px; height: auto; background-color: #FFFFFF; flex-direction: column; align-items: center; justify-content: center; }
-.blackblack1 .contentbox h1, .blackblack2 .contentbox h1 { display: block; text-align: center; font-size: 18px; line-height: 30px; }
-.blackblack1 .contentbox .yes, .blackblack2 .contentbox .yes { display: block; width: 97.91667%; float: left; margin-left: 1.04167%; margin-right: 1.04167%; margin: 10px; }
-.blackblack1 .contentbox button, .blackblack2 .contentbox button { width: 47.91667%; float: left; margin-left: 1.04167%; margin-right: 1.04167%; padding: 10px; border: none; outline: none; cursor: pointer; color: #FFFFFF; background-color: #A7017A; }
-.blackblack1 .contentbox button:hover, .blackblack2 .contentbox button:hover { background-color: #3E3A3A; }
+.blackblack1, .blackblack2, .blackblack3 { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 5; display: none; }
+.blackblack1 .black, .blackblack2 .black, .blackblack3 .black { display: block; background-color: rgba(0, 0, 0, 0.6); width: 100%; height: 100%; }
+.blackblack1 .contentbox, .blackblack2 .contentbox, .blackblack3 .contentbox { position: absolute; top: 50%; left: 50%; display: block; margin-left: -250px; padding: 30px; width: 500px; height: auto; background-color: #FFFFFF; flex-direction: column; align-items: center; justify-content: center; }
+.blackblack1 .contentbox h1, .blackblack2 .contentbox h1, .blackblack3 .contentbox h1 { display: block; text-align: center; font-size: 18px; line-height: 30px; }
+.blackblack1 .contentbox .yes, .blackblack2 .contentbox .yes, .blackblack3 .contentbox .yes { display: block; width: 97.91667%; float: left; margin-left: 1.04167%; margin-right: 1.04167%; margin: 10px; }
+.blackblack1 .contentbox button, .blackblack2 .contentbox button, .blackblack3 .contentbox button { width: 47.91667%; float: left; margin-left: 1.04167%; margin-right: 1.04167%; padding: 10px; border: none; outline: none; cursor: pointer; color: #FFFFFF; background-color: #A7017A; }
+.blackblack1 .contentbox button:hover, .blackblack2 .contentbox button:hover, .blackblack3 .contentbox button:hover { background-color: #3E3A3A; }
 
 footer { position: absolute; bottom: 0; width: 100%; height: 80px; margin-top: 30px; }
 footer:before { content: ""; display: block; position: absolute; bottom: 0; left: 0; width: 100%; height: 80px; background-color: #A7017A; z-index: -1; }
