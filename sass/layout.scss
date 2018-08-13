@@ -197,7 +197,7 @@ header{
 				}
 				// 購物車清單
 				.shoppinglist{
-					display: none;			
+					display: none;	
 					position: absolute;
 					top: 60px;
 					right: 0;
@@ -268,8 +268,11 @@ header{
 							}
 						}
 						h1{
-							font-size: 20px;
+							@include adjust-font-size-to(nth($font-list, 4),3 );
 							font-weight: bold;
+							background-color: $returnColor;
+							color: $content_font_color;
+							padding-left: 10px;
 						}
 						h3{
 							display: block;
@@ -278,7 +281,8 @@ header{
 							line-height: 32px;
 							padding-left: rhythm(2);
 							font-size: 18px;
-						}				
+							text-align:center;
+						}
 					}
 					button{
 						padding: rhythm(0.8);

@@ -82,8 +82,8 @@ header .container .nav_area .goshop_area .shoppinglist .list ul li .details a p 
 header .container .nav_area .goshop_area .shoppinglist .list ul li .details .mony { font-size: 14px; line-height: 20px; color: #A7017A; }
 header .container .nav_area .goshop_area .shoppinglist .list ul li .details .mony span { font-size: 20px; line-height: 30px; font-weight: bolder; }
 header .container .nav_area .goshop_area .shoppinglist .list ul li .del { position: absolute; bottom: 9px; right: 14px; }
-header .container .nav_area .goshop_area .shoppinglist .list h1 { font-size: 20px; font-weight: bold; }
-header .container .nav_area .goshop_area .shoppinglist .list h3 { display: block; width: 100%; height: 32px; line-height: 32px; padding-left: 20px; font-size: 18px; }
+header .container .nav_area .goshop_area .shoppinglist .list h1 { font-size: 18px; line-height: 30px; font-weight: bold; background-color: #9A9595; color: #FFFFFF; padding-left: 10px; }
+header .container .nav_area .goshop_area .shoppinglist .list h3 { display: block; width: 100%; height: 32px; line-height: 32px; padding-left: 20px; font-size: 18px; text-align: center; }
 header .container .nav_area .goshop_area .shoppinglist button { padding: 8px; width: 100%; border: none; color: #FFFFFF; background-color: #A7017A; cursor: pointer; outline: none; }
 header .container .nav_area .goshop_area .shoppinglist button:hover { background-color: #3E3A3A; }
 header:before { content: ""; display: block; position: absolute; bottom: 0; left: 0; width: 100%; height: 60px; background-color: #A7017A; }
