@@ -42,9 +42,13 @@ header .container .member_area { overflow: hidden; background-color: #FFFFFF; }
 header .container .member_area .simplelogo { display: inline-block; width: 200px; height: 80px; float: left; }
 header .container .member_area .simplelogo h1 { display: flex; align-items: center; justify-content: center; height: 80px; }
 header .container .member_area .simplelogo h1 a { display: inline-block; background-image: url('../images/simplelogo.png'); width: 100px; height: 29px; }
-header .container .member_area .simplego_logo { width: 770px; height: 80px; float: left; }
+header .container .member_area .simplego_logo { width: 520px; height: 80px; float: left; }
 header .container .member_area .simplego_logo h1 { text-align: center; }
 header .container .member_area .simplego_logo h1 a { display: inline-block; background-image: url('../images/logo.png'); width: 150px; height: 44px; }
+header .container .member_area .serch { display: inline-block; width: 250px; height: 80px; float: left; display: flex; justify-content: center; align-items: center; }
+header .container .member_area .serch input[type='text'] { width: 180px; height: 30px; outline: none; }
+header .container .member_area .serch button { width: 44px; height: 30px; cursor: pointer; color: #FFFFFF; background-color: #9A9595; outline: none; border: 0; }
+header .container .member_area .serch button:hover { background-color: #808285; }
 header .container .member_area .member { width: 240px; height: 80px; float: left; overflow: hidden; display: flex; justify-content: center; align-items: center; }
 header .container .member_area .member ul { width: 360px; overflow: hidden; }
 header .container .member_area .member ul li { width: 110px; padding: 5px; margin: 5px; text-align: center; border: 1px solid #A7017A; float: left; }

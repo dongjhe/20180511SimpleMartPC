@@ -60,7 +60,7 @@ header{
 			}			
 			.simplego_logo{
 				@extend %center-center;
-				width: 770px;
+				width: 520px;
 				height: 80px;
 				float: left;
 				h1{
@@ -71,6 +71,32 @@ header{
 						@include image-block("logo.png");
 					}
 				}
+			}
+			.serch{
+				display: inline-block;
+				width: 250px;
+				height: 80px;
+				float: left;
+				display: flex;
+			    justify-content: center;
+			    align-items: center;
+			    input[type='text']{
+			    	width: 180px;
+			    	height: 30px;
+			    	outline: none;
+			    }
+			    button{
+			    	width: 44px;
+			    	height: 30px;
+			    	cursor: pointer;
+			    	color: $white_color;
+			    	background-color:$returnColor;
+			    	outline: none;
+			    	border: 0;
+			    	&:hover{
+			    		background-color: $content_gray_color;
+			    	}
+			    }
 			}
 			.member{
 				width: 240px;
