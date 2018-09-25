@@ -384,7 +384,8 @@ main .myorder .myorderlist .listitle a:hover:before { border-color: #A7017A tran
 main .myorder .myorderlist .listitle a:hover.act:before { border-color: transparent transparent #A7017A transparent; }
 main .myorder .myorderlist .listitle h2 { display: inline-block; margin-left: 30px; padding-right: 20px; font-weight: bolder; }
 main .myorder .myorderlist .listitle h2 span { color: #A7017A; }
-main .myorder .myorderlist .listitle h2:nth-child(2), main .myorder .myorderlist .listitle h2:nth-child(3) { border-right: 3px solid #A7017A; }
+main .myorder .myorderlist .listitle h2:nth-child(3) { border-right: 3px solid #A7017A; }
+main .myorder .myorderlist .listitle h2:nth-child(2) { color: #FFFFFF; background-color: #A7017A; padding: 8px; border-radius: 5px; }
 main .myorder .myorderlist .listcont { width: 1040px; padding: 0; margin: 0 auto; }
 main .myorder .myorderlist .listcont .total_list { margin-top: 20px; margin-bottom: 20px; margin-right: auto; margin-left: auto; }
 main .myorder .myorderlist .listcont .total_list ul { overflow: hidden; border-top: 1px solid #3E3A3A; }
