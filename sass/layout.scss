@@ -2488,6 +2488,9 @@ main{
 		}
 		.contentimg{
 			margin-top: rhythm(2);
+			&.area2{
+				display: none;
+			}
 		}
 		.textbox{
 			h3{
@@ -2508,6 +2511,24 @@ main{
 		}
 	}
 	
+	.return_process .return_process_bt{
+		display: block;
+		padding: 0;
+		margin: 15px auto;
+		width: 100%;
+		text-align: center;
+		a{
+			padding: 5px 10px;
+			margin: 0 10px;
+			border-radius: 5px;
+			color: $content_font_color;
+			background-color: $content_gray_color;
+			&.active{
+				background-color:$purple_color;
+			}
+		}
+	}
+
 	// 服務條款
 	.service,.privacy{
 		width: 1200px;

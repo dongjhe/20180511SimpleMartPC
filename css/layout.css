@@ -264,7 +264,7 @@ main .Return_information, main .payment_information { width: 800px; overflow: hi
 main .Return_information h2, main .payment_information h2 { text-align: center; font-weight: bolder; color: #3E3A3A; padding-bottom: 20px; font-size: 18px; line-height: 30px; }
 main .Return_information ul li, main .payment_information ul li { width: 22.91667%; float: left; margin-left: 1.04167%; margin-right: 1.04167%; font-size: 16px; line-height: 20px; font-weight: bold; position: relative; }
 main .Return_information ul li:before, main .payment_information ul li:before { content: ""; position: absolute; top: -18px; left: 0; width: 1px; height: 35px; background-color: #A7017A; -moz-transform: rotate(60deg); -ms-transform: rotate(60deg); -webkit-transform: rotate(60deg); transform: rotate(60deg); }
-main .Return_information ul li:after, main .payment_information ul li:after { content: ""; position: absolute; right: 10px; top: 15px; display: block; background-image: url('../images/arrow.png?1505807641'); width: 54px; height: 8px; }
+main .Return_information ul li:after, main .payment_information ul li:after { content: ""; position: absolute; right: 10px; top: 15px; display: block; background-image: url('../images/arrow.png?1537842075'); width: 54px; height: 8px; }
 main .Return_information ul li:last-child:after, main .payment_information ul li:last-child:after { display: none; }
 main .payment_information { width: 900px; }
 main .payment_information ul li { width: 31.25%; float: left; margin-left: 1.04167%; margin-right: 1.04167%; }
@@ -314,7 +314,7 @@ main .shoppingdetails .shopbox1 .total_amount span { margin-left: 10px; color: #
 main .shoppingdetails .shoppingbot { padding-top: 60px; padding-right: 80px; padding-bottom: 60px; padding-left: 80px; }
 main .shoppingdetails .shoppingbot button { width: 47.91667%; float: left; margin-left: 1.04167%; margin-right: 1.04167%; padding: 10px; border: none; outline: none; cursor: pointer; color: #FFFFFF; background-color: #A7017A; }
 main .shoppingdetails .shoppingbot button:nth-child(1) { background-color: #808285; position: relative; }
-main .shoppingdetails .shoppingbot button.shopicon:before { content: ""; position: absolute; top: 6px; left: 180px; background-image: url('../images/icon_shopping.png?1504588963'); width: 28px; height: 24px; }
+main .shoppingdetails .shoppingbot button.shopicon:before { content: ""; position: absolute; top: 6px; left: 180px; background-image: url('../images/icon_shopping.png?1537842075'); width: 28px; height: 24px; }
 main .shoppingdetails .shoppingbot button:hover { background-color: #3E3A3A; }
 main .shoppingdetails .shoppingbot.bt1 { overflow: hidden; padding-top: 20px; padding-right: 40px; padding-bottom: 20px; padding-left: 40px; }
 main .shoppingdetails .shoppingbot.bt1 button { width: 97.91667%; float: left; margin-left: 1.04167%; margin-right: 1.04167%; padding: 10px; border: none; outline: none; cursor: pointer; color: #FFFFFF; background-color: #A7017A; }
@@ -340,7 +340,7 @@ main .shoppingdetails .shopbox2 .box .boxright1 .checkbox.radioInput, main .shop
 main .shoppingdetails .shopbox2 .box .maplist { width: 31.25%; float: left; margin-left: 1.04167%; margin-right: 1.04167%; height: 420px; overflow-y: scroll; }
 main .shoppingdetails .shopbox2 .box .maplist ul li { padding-top: 3px; padding-bottom: 3px; border-bottom: 1px dashed #3E3A3A; }
 main .shoppingdetails .shopbox2 .box .maplist ul li a { position: relative; display: block; padding: 2px; margin-left: 40px; }
-main .shoppingdetails .shopbox2 .box .maplist ul li a:before { content: ""; position: absolute; top: 12px; left: -40px; background-image: url('../images/Icon_map.png?1502169444'); width: 35px; height: 35px; background-size: 100%; }
+main .shoppingdetails .shopbox2 .box .maplist ul li a:before { content: ""; position: absolute; top: 12px; left: -40px; background-image: url('../images/Icon_map.png?1537842074'); width: 35px; height: 35px; background-size: 100%; }
 main .shoppingdetails .shopbox2 .box .maplist ul li a p { color: #3E3A3A; font-size: 14px; line-height: 20px; }
 main .shoppingdetails .shopbox2 .box .maplist ul li:hover { background-color: #E0E0E0; }
 main .shoppingdetails .shopbox2 .box .mapinfo { width: 66.66667%; float: left; height: 420px; }
@@ -467,9 +467,13 @@ main .buyhelp, main .return_process { width: 1200px; }
 main .buyhelp h2, main .return_process h2 { margin-top: 5px; margin-bottom: 5px; font-size: 16px; line-height: 20px; color: #A7017A; text-align: center; font-weight: bolder; }
 main .buyhelp h2 a, main .return_process h2 a { text-decoration: underline; }
 main .buyhelp .contentimg, main .return_process .contentimg { margin-top: 20px; }
+main .buyhelp .contentimg.area2, main .return_process .contentimg.area2 { display: none; }
 main .buyhelp .textbox h3, main .return_process .textbox h3 { display: block; color: #FFFFFF; background-color: #9A9595; text-align: center; font-size: 18px; line-height: 35px; margin-bottom: 15px; }
 main .buyhelp .textbox ol, main .return_process .textbox ol { list-style: decimal; padding-left: 20px; }
 main .buyhelp .textbox ol li, main .return_process .textbox ol li { font-size: 16px; line-height: 30px; }
+main .return_process .return_process_bt { display: block; padding: 0; margin: 15px auto; width: 100%; text-align: center; }
+main .return_process .return_process_bt a { padding: 5px 10px; margin: 0 10px; border-radius: 5px; color: #FFFFFF; background-color: #808285; }
+main .return_process .return_process_bt a.active { background-color: #A7017A; }
 main .service, main .privacy { width: 1200px; }
 main .service .textbox, main .privacy .textbox { padding-top: 10px; padding-bottom: 10px; padding-right: 20px; padding-left: 20px; margin-top: 10px; margin-bottom: 20px; border: 1px solid #A7017A; }
 main .service .textbox p, main .privacy .textbox p { color: #2b2b2b; font-size: 16px; line-height: 25px; }
@@ -496,7 +500,7 @@ main .setpassowrd .shopbox2 .box .boxright select:nth-child(2) { margin-left: 4p
 main .setpassowrd .shoppingbot { padding-top: 60px; padding-right: 80px; padding-bottom: 60px; padding-left: 80px; }
 main .setpassowrd .shoppingbot button { width: 47.91667%; float: left; margin-left: 1.04167%; margin-right: 1.04167%; padding: 10px; border: none; outline: none; cursor: pointer; color: #FFFFFF; background-color: #A7017A; }
 main .setpassowrd .shoppingbot button:nth-child(1) { background-color: #808285; position: relative; }
-main .setpassowrd .shoppingbot button.shopicon:before { content: ""; position: absolute; top: 6px; left: 180px; background-image: url('../images/icon_shopping.png?1504588963'); width: 28px; height: 24px; }
+main .setpassowrd .shoppingbot button.shopicon:before { content: ""; position: absolute; top: 6px; left: 180px; background-image: url('../images/icon_shopping.png?1537842075'); width: 28px; height: 24px; }
 main .setpassowrd .shoppingbot button:hover { background-color: #3E3A3A; }
 main .setpassowrd .shoppingbot.bt1 { overflow: hidden; padding-top: 20px; padding-right: 40px; padding-bottom: 20px; padding-left: 40px; }
 main .setpassowrd .shoppingbot.bt1 button { width: 97.91667%; float: left; margin-left: 1.04167%; margin-right: 1.04167%; padding: 10px; border: none; outline: none; cursor: pointer; color: #FFFFFF; background-color: #A7017A; }
@@ -542,14 +546,14 @@ footer .container ul li a:hover { color: #A7017A; background-color: #FFFFFF; }
 .alertbox .alert_terms .contbox .text h3 { font-size: 14px; line-height: 25px; margin-bottom: 2%; }
 .alertbox .alert_terms .contbox .text h4 { padding-left: 5%; font-size: 14px; line-height: 25px; }
 .alertbox .alert_terms .contbox .text h4 span { font-size: 14px; line-height: 20px; }
-.alertbox .alert_terms .box { width: 250px; height: 501px; overflow: hidden; background-image: url('../images/iphone_bg.png?1518163914'); background-size: 100%; margin-top: 10px; }
+.alertbox .alert_terms .box { width: 250px; height: 501px; overflow: hidden; background-image: url('../images/iphone_bg.png?1537842075'); background-size: 100%; margin-top: 10px; }
 .alertbox .alert_terms .step ul { width: 1750px; overflow: hidden; position: relative; left: 0px; }
 .alertbox .alert_terms .step ul li { position: relative; width: 250px; height: 501px; float: left; }
 .alertbox .alert_terms .step ul li img { position: absolute; left: 0; top: 0; width: 100%; height: auto; }
 .alertbox .alert_terms .step ul li .text { position: absolute; z-index: 1; }
 .alertbox .alert_terms .step ul li p { display: inline-block; padding: 10px; font-size: 16px; line-height: 20px; text-align: center; color: #FFFFFF; background-color: #3E3A3A; }
 .alertbox .alert_terms .step ul li .finger { width: 40px; height: 40px; position: absolute; z-index: 1; position: absolute; right: 0; bottom: 0; }
-.alertbox .alert_terms .step ul li .finger a { width: 40px; height: 40px; background-image: url('../images/finger.png?1518166005'); background-size: 100%; }
+.alertbox .alert_terms .step ul li .finger a { width: 40px; height: 40px; background-image: url('../images/finger.png?1537842075'); background-size: 100%; }
 .alertbox .alert_terms .step ul li .finger .bg { position: absolute; top: 0px; left: 0px; background-color: rgba(253, 242, 93, 0.8); z-index: -1; border-radius: 50%; width: 40px; height: 40px; -moz-animation: 1s infinite bigsmail; -webkit-animation: 1s infinite bigsmail; animation: 1s infinite bigsmail; -moz-transform: scale(1); -ms-transform: scale(1); -webkit-transform: scale(1); transform: scale(1); }
 .alertbox .alert_terms .step ul li:nth-child(1) .text { top: 90px; left: 55px; }
 .alertbox .alert_terms .step ul li:nth-child(1) .finger { bottom: -22px; }
