@@ -434,9 +434,9 @@ main .myorder .myorderlist .listcont .product_information .cont .left h4 p { wid
 main .myorder .myorderlist .listcont .product_information .cont .left h4 p:first-child { width: 75%; float: left; }
 main .myorder .myorderlist .listcont .product_information .cont .left h4 p a { color: #000; }
 main .myorder .myorderlist .listcont .product_information .cont .left h4 p.money { width: 20.83333%; float: left; text-align: right; }
-main .myorder .myorderlist .listcont .product_information .cont .left .status { display: inline-block; overflow: hidden; width: 640px; margin-top: 20px; }
-main .myorder .myorderlist .listcont .product_information .cont .left .status ul { position: relative; left: -20px; overflow: hidden; }
-main .myorder .myorderlist .listcont .product_information .cont .left .status ul li { display: block; width: 20%; float: left; color: #3E3A3A; border: none; position: relative; text-align: center; font-size: 16px; line-height: 30px; }
+main .myorder .myorderlist .listcont .product_information .cont .left .status { display: inline-block; overflow: hidden; width: 600px; margin-top: 20px; }
+main .myorder .myorderlist .listcont .product_information .cont .left .status ul { position: relative; left: -30px; overflow: hidden; }
+main .myorder .myorderlist .listcont .product_information .cont .left .status ul li { display: block; width: 25%; float: left; color: #3E3A3A; border: none; position: relative; text-align: center; font-size: 16px; line-height: 30px; }
 main .myorder .myorderlist .listcont .product_information .cont .left .status ul li:before { content: ""; display: block; position: absolute; top: 12px; left: 0px; width: 100%; height: 1px; background-color: #808285; z-index: -1; }
 main .myorder .myorderlist .listcont .product_information .cont .left .status ul li:first-child:before, main .myorder .myorderlist .listcont .product_information .cont .left .status ul li:last-child:before { width: 50%; }
 main .myorder .myorderlist .listcont .product_information .cont .left .status ul li:first-child:before { left: 50%; }
