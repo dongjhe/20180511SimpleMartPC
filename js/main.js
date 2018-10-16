@@ -270,7 +270,7 @@ $(function() {
     // 退貨流程按鈕切換
     $('.return_process_bt a').on('click',function(){
         
-        $(this).toggleClass('active').siblings('a').removeClass('active');
+        $(this).addClass('active').siblings('a').removeClass('active');
 
         let index_of = $(this).index();
 
