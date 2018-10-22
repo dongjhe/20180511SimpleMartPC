@@ -472,9 +472,9 @@ main .buyhelp .contentimg.area2, main .return_process .contentimg.area2 { displa
 main .buyhelp .textbox h3, main .return_process .textbox h3 { display: block; color: #FFFFFF; background-color: #9A9595; text-align: center; font-size: 18px; line-height: 35px; margin-bottom: 15px; }
 main .buyhelp .textbox ol, main .return_process .textbox ol { list-style: decimal; padding-left: 20px; }
 main .buyhelp .textbox ol li, main .return_process .textbox ol li { font-size: 16px; line-height: 30px; }
-main .return_process .return_process_bt { display: block; padding: 0; margin: 15px auto; width: 100%; text-align: center; }
-main .return_process .return_process_bt a { padding: 5px 10px; margin: 0 10px; border-radius: 5px; color: #FFFFFF; background-color: #808285; }
-main .return_process .return_process_bt a.active { background-color: #A7017A; }
+main .return_process > .return_process_bt, main .buyhelp > .buyhelp_bt { display: block; padding: 0; margin: 15px auto; width: 100%; text-align: center; }
+main .return_process > .return_process_bt a, main .buyhelp > .buyhelp_bt a { padding: 5px 10px; margin: 0 10px; border-radius: 5px; color: #FFFFFF; background-color: #808285; }
+main .return_process > .return_process_bt a.active, main .buyhelp > .buyhelp_bt a.active { background-color: #A7017A; }
 main .service, main .privacy { width: 1200px; }
 main .service .textbox, main .privacy .textbox { padding-top: 10px; padding-bottom: 10px; padding-right: 20px; padding-left: 20px; margin-top: 10px; margin-bottom: 20px; border: 1px solid #A7017A; }
 main .service .textbox p, main .privacy .textbox p { color: #2b2b2b; font-size: 16px; line-height: 25px; }
